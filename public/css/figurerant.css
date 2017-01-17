@@ -1,0 +1,44 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 110px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+
+
+.collection-panel {
+
+    border-radius: 0;
+}
+
+.collection-title {
+	text-align: center;
+}
+
+.blog-image {
+	width: 700px; 
+    height: 300px; 
+    overflow: hidden; 
+}
+
+.post p {
+	/*font-family: Georgia,Cambria,"Times New Roman",Times,serif;*/
+    letter-spacing: .01rem;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 21px;
+    line-height: 1.58;
+    letter-spacing: -.003em;
+    margin-bottom: 20px;
+    }
