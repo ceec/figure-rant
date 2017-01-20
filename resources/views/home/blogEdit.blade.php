@@ -18,9 +18,9 @@
               <label for="japanese-name">Title</label>
                {!! Form::text('title',$blog->title,['class'=>'form-control','id'=>'title']) !!}
             </div>                  
-			      <div class="form-group">
-              <label for="blurb">Blurb - Short description that shows up on the main page</label>
-               {!! Form::text('blurb',$blog->blurb,['class'=>'form-control','id'=>'blurb']) !!}
+            <div class="form-group">
+              <label for="type">Type</label>
+               {!! Form::select('type',array('rant' => 'rant', 'haul' => 'haul','news' => 'news'),$blog->type,['class'=>'form-control','id'=>'type']) !!}
             </div>   
             <div class="form-group">
               <label for="s-name">Content</label>
