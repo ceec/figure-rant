@@ -76,7 +76,7 @@ class BlogController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function listDisplay() {
-            $blogs = Blog::all();
+            $blogs = Blog::orderBy('created_at','desc')->get();
 
             return view('home.blogList')
             ->with('blogs',$blogs);

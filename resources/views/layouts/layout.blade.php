@@ -18,6 +18,8 @@
     <!-- Styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/figurerant.css" rel="stylesheet">
+    <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
 

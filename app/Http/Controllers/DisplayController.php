@@ -246,6 +246,9 @@ class DisplayController extends Controller
             ->with('blogs',$blogs);
     }   
 
+
+
+
       /**
      * Just Reviews
      *
@@ -256,7 +259,7 @@ class DisplayController extends Controller
         //how many in total
         $total = FigureController::total();
 
-        $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->where('type','=','review')->paginate(10);
+        $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->where('type','=','review')->paginate(10);        
 
         return view('welcome')
             ->with('total',$total)        
