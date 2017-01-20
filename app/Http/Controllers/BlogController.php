@@ -59,7 +59,6 @@ class BlogController extends Controller {
         $b->type = 'news';
         $b->keywords = '';
         $b->title = $request->input('title');
-        $b->blurb = $request->input('blurb');
         $b->content = $request->input('content');
         $b->image = $request->input('image');
         $b->url = $request->input('url');
@@ -107,7 +106,6 @@ class BlogController extends Controller {
         $up = Blog::find($blog_id);
         $up->active = $request->input('active');
         $up->title = $request->input('title');
-        $up->blurb = $request->input('blurb');
         $up->content = $request->input('content');
         $up->image = $request->input('image');
         $up->url = $request->input('url');
