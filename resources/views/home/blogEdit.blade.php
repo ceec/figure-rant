@@ -20,7 +20,7 @@
             </div>                  
             <div class="form-group">
               <label for="type">Type</label>
-               {!! Form::select('type',array('rant' => 'rant', 'haul' => 'haul','news' => 'news'),$blog->type,['class'=>'form-control','id'=>'type']) !!}
+               {!! Form::select('type',array('rant' => 'rant', 'haul' => 'haul','news' => 'news','review'=>'review'),$blog->type,['class'=>'form-control','id'=>'type']) !!}
             </div>   
             <div class="form-group">
               <label for="s-name">Content</label>
