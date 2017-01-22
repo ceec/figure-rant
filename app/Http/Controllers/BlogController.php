@@ -61,6 +61,7 @@ class BlogController extends Controller {
         $b->title = $request->input('title');
         $b->content = $request->input('content');
         $b->image = $request->input('image');
+        $b->image_amount = 0;
         $b->url = $request->input('url');
         $b->updated_by = Auth::id();  
         $b->save();
