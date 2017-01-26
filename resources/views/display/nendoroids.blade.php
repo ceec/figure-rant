@@ -20,12 +20,14 @@
                         Store: {{$nendo->order_id}}<br>
                         Price: &yen;{{$nendo->price_yen}}<br>
                         Release Date: {{$nendo->available_release_date}}<br>
-                        GSC: <a target="_blank" href="{{$nendo->gsc_url}}">{{$nendo->name}}</a><br>
-                        AmiAmi: <a target="_blank" href="http://www.amiami.com/top/detail/detail?gcode={{$nendo->amiami_id}}">{{$nendo->name}}</a>
+                        GSC: <a target="_blank" href="{{$nendo->gsc_url}}">{{$folder}}</a><br>
+                        AmiAmi: <a target="_blank" href="http://www.amiami.com/top/detail/detail?gcode={{$nendo->amiami_id}}">{{$folder}}</a>
                     </p>
                 </div>
                 <div class="col-md-3">
+                    <?php echo public_path('/images/nendoroids/'.$folder.'/announced.jpg'); ?>
                     @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
+
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
