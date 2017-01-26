@@ -179,6 +179,127 @@ class DisplayController extends Controller
     }
 
 
+     /**
+     * Figures
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function figures() {
+       //$collection = Collection::where('user_id','=',1)->figures;
+       $scale18 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='1'");
+       //get how many scales
+       $amount18 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='1'");
+
+       //17 scales
+        $scale17 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='2'");
+       //get how many scales
+       $amount17 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='2'");    
+
+       //16 scales
+        $scale16 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='3'");
+       //get how many scales
+       $amount16 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='3'");    
+
+       //nendos
+       $nendos = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");
+       //amount nendos
+       $amountnendos = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");    
+
+
+       //nendo co-de
+       $nendocodes = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
+       $amountnendocodes = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
+
+       //nendodroid petit
+       $nendopetites = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
+       $amountnendopetites = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
+
+
+       //cu-pouche
+       $cupoches = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='5'");
+       $amountcupoches = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='5'");
+
+       //figma
+       $figmas = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='6'");
+       $amountfigmas = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='6'");
+
+       //medicchu
+
+       //prize figures
+
+
+
+       $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
+
+       //how many in total
+       $total = FigureController::total();
+
+        return view('display.figures')
+          ->with('scale18',$scale18)
+          ->with('amount18',$amount18)
+          ->with('scale17',$scale17)
+          ->with('amount17',$amount17)              
+          ->with('scale16',$scale16)
+          ->with('amount16',$amount16)  
+          ->with('nendos',$nendos)
+          ->with('amountnendos',$amountnendos)     
+          ->with('nendocodes',$nendocodes)
+          ->with('nendopetites',$nendopetites)
+          ->with('amountnendopetites',$amountnendopetites)
+          ->with('amountnendocodes',$amountnendocodes)  
+          ->with('figmas',$figmas)
+          ->with('amountfigmas',$amountfigmas)
+          ->with('figures',$figures)
+          ->with('total',$total);
+    }
+
+
+     /**
+     * Nendoroids
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function nendoroids() {
+
+       //nendos
+       $nendos = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");
+       //amount nendos
+       $amountnendos = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");    
+
+
+       //nendo co-de
+       $nendocodes = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
+       $amountnendocodes = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
+
+       //nendodroid petit
+       $nendopetites = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
+       $amountnendopetites = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
+
+
+       $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
+
+       //how many in total
+       $total = FigureController::total();
+
+
+
+       $nendopreorders = Figure::where('productline_id','=',1)->where('status_id','=',3)->get();
+
+
+
+        return view('display.nendoroids')
+          ->with('nendos',$nendos)
+          ->with('amountnendos',$amountnendos)     
+          ->with('nendocodes',$nendocodes)
+          ->with('nendopetites',$nendopetites)
+          ->with('nendopreorders',$nendopreorders)
+          ->with('amountnendopetites',$amountnendopetites)
+          ->with('amountnendocodes',$amountnendocodes)  
+          ->with('figures',$figures)
+          ->with('total',$total);
+    }
+
+
     /**
      * Orders
      *
