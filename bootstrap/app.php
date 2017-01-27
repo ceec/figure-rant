@@ -11,7 +11,12 @@
 |
 */
 
-$app = new Illuminate\Foundation\Application(
+// $app = new Illuminate\Foundation\Application(
+//     realpath(__DIR__.'/../')
+// );
+
+//modifying public path - 2017-01-26
+$app = new App\Application(
     realpath(__DIR__.'/../')
 );
 
