@@ -25,20 +25,21 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists('/images/nendoroids/'.$folder.'/announced.jpg'))
+                    <?php echo public_path(); ?>
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
 
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
                 <div class="col-md-3">
-                    @if (file_exists('/images/nendoroids/'.$folder.'/prototype.jpg'))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/prototype.jpg')))
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}/prototype.jpg">
                         Prototype Seen: {{$nendo->seen_date}}
                     @endif
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists('/images/nendoroids/'.$folder.'/released.jpg'))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/released.jpg')))
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}/released.jpg">
                         Preorders opened: {{$nendo->available_date}}
                     @endif
