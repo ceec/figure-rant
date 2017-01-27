@@ -25,7 +25,6 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    <?php echo public_path(); ?>
                     @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
 
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
