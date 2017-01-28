@@ -284,8 +284,8 @@ class DisplayController extends Controller
 
 
        $nendopreorders = Figure::where('productline_id','=',1)->where('status_id','=',3)->get();
-
-
+       $nendoavailable = Figure::where('productline_id','=',1)->where('status_id','=',2)->get();
+       $nendoannounce = Figure::where('productline_id','=',1)->where('status_id','=',1)->get();       
 
         return view('display.nendoroids')
           ->with('nendos',$nendos)
@@ -293,6 +293,8 @@ class DisplayController extends Controller
           ->with('nendocodes',$nendocodes)
           ->with('nendopetites',$nendopetites)
           ->with('nendopreorders',$nendopreorders)
+          ->with('nendoavailable',$nendoavailable)
+          ->with('nendoannounce',$nendoannounce)
           ->with('amountnendopetites',$amountnendopetites)
           ->with('amountnendocodes',$amountnendocodes)  
           ->with('figures',$figures)
