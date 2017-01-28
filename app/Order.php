@@ -14,6 +14,13 @@ class Order extends Model
         return $this->hasMany('App\Figure');
     }
 
+        /**
+     * Get the store.
+     */
+    public function store()
+    {
+        return $this->belongsTo('App\Store');
+    }
 
 
 }

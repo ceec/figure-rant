@@ -25,7 +25,7 @@
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
                         <td>{{$order->shipment_date}}</td> 
-                        <td>{{$order->store()->get()}}</td>
+                        <td>{{$order->store->name}}</td>
                         <td></td>
                         <td></td>
                         <td>
