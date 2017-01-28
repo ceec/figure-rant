@@ -302,6 +302,33 @@ class DisplayController extends Controller
     }
 
 
+
+    /**
+     * Order
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function order($order_id) {
+
+       //how many in total
+       $total = FigureController::total();
+
+
+       $order = Order::find($order_id);
+
+       $figures = Figure::where('order_id','=',$order_id)->get();
+
+
+
+        return view('display.order')
+            ->with('total',$total)    
+            ->with('figures',$figures)     
+            ->with('order',$order);
+    }   
+
+
+
+
     /**
      * Orders
      *

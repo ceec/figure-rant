@@ -9,6 +9,7 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>Order</th>
                     <th>Ship Date</th>
                     <th>Store</th>
                     <th>Figures</th>
@@ -22,6 +23,7 @@
             <tbody>
                 @foreach($orders as $order)
                     <tr>
+                        <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
                         <td>{{$order->shipment_date}}</td> 
                         <td>{{$order->store}}</td>
                         <td></td>
@@ -47,6 +49,7 @@
                             @endif
                         </td>                    </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
 
@@ -89,6 +92,7 @@
                 <tfoot>
                     <tr>
                         <td><strong>Total</strong></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>

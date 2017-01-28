@@ -16,6 +16,8 @@ Route::get('/', 'DisplayController@index');
 
 Route::get('/about', 'DisplayController@about');
 Route::get('/orders', 'DisplayController@orders');
+Route::get('/order/{order_id}', 'DisplayController@order');
+
 Route::get('/figures', 'DisplayController@figures');
 Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
