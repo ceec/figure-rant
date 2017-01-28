@@ -347,21 +347,26 @@ class DisplayController extends Controller
         //     $cards[$key]->dorifes_skill = $skill['japanese_description'];
         //   }
 
-      foreach($orders as $key => $order) {
-        //get info
-        $store = Store::select('name')->where('id','=',$order->store_id)->first();
-        $orders[$key]->store = $store['name'];
 
-        //get the figures
-        $figures = Collection::where('order_id','=',$order->id)->get();
-        foreach($figures as $fkey => $figure) {
-          $figure_info = Figure::select('name')->where('id','=',$figure->figure_id)->first();
-           $figures[$fkey]->name = substr($figure_info['name'],0,35);
-        }
 
-        $orders[$key]->figures = $figures;
 
-       }
+
+
+      // foreach($orders as $key => $order) {
+      //   //get info
+      //   $store = Store::select('name')->where('id','=',$order->store_id)->first();
+      //   $orders[$key]->store = $store['name'];
+
+      //   //get the figures
+      //   $figures = Collection::where('order_id','=',$order->id)->get();
+      //   foreach($figures as $fkey => $figure) {
+      //     $figure_info = Figure::select('name')->where('id','=',$figure->figure_id)->first();
+      //      $figures[$fkey]->name = substr($figure_info['name'],0,35);
+      //   }
+
+      //   $orders[$key]->figures = $figures;
+
+      //  }
 
        $total_usd = Order::sum('total_usd');
        $total_yen = Order::sum('total_yen');

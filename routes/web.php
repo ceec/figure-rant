@@ -74,7 +74,7 @@ Route::get('rss.xml', function(){
        foreach ($posts as $post)
        {
            // set item's title, author, url, pubdate, description, content, enclosure (optional)*
-           $feed->add($post->title, $post->updated_by, URL::to($post->type.'/'.$post->url), $post->created_at, $post->blurb, $post->content);
+           $feed->add($post->title, $post->updated_by, URL::to($post->type.'/'.$post->url), $post->created_at,$post->content);
        }
 
     }

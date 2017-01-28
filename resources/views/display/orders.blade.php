@@ -25,7 +25,7 @@
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
                         <td>{{$order->shipment_date}}</td> 
-                        <td>{{$order->store}}</td>
+                        <td>{{$order->store()->get()}}</td>
                         <td></td>
                         <td></td>
                         <td>
@@ -55,7 +55,11 @@
 
                         <td>
                             @foreach($order->figures as $figure)
-                                {{$figure->name}}<br>
+                                <?php 
+                                    $name = substr($figure->name,0,35);
+
+                                ?>
+                                {{$name}}<br>
                             @endforeach
                         </td>
                         <td>
