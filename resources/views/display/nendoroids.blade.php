@@ -25,9 +25,9 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
@@ -66,9 +66,9 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
@@ -107,9 +107,9 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/announced.jpg')))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/announced.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
