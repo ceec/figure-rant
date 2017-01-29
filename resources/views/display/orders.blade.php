@@ -66,7 +66,7 @@
                             @foreach($order->figures as $figure)
                                 {{$figure->status}}
                                 @if($figure->status == 'Pre-order')
-                                    - {{$figure->preorder_date}}<br>
+                                    - {{$order->preorder_date}}<br>
                                 @else
                                     <br>
                                 @endif
