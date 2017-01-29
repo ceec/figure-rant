@@ -339,7 +339,11 @@ class DisplayController extends Controller
        //how many in total
        $total = FigureController::total();
 
-       $orders = Order::orderBy('order_date','desc')->get();
+       //$orders = Order::orderBy('order_date','desc')->get();
+        $orders = Order::orderBy('id','desc')->get();
+
+       //$orders = Order::all();
+
 
         // foreach($cards as $key => $card) {
         //     $skill = Skill::select('japanese_description')->where('id','=',$card->dorifes_id)->first();
