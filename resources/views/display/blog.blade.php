@@ -29,8 +29,8 @@
                 @if ($blog->type == 'review')
                           <div id="links">
                             @for($i=1; $i < $blog->image_amount; $i++)
-                                <a href="/images/review/{{$blog->url}}/{{$i}}.jpg"  data-gallery>
-                                    <img class="figure-thumb blueimp-gallery-controls" src="/images/review/{{$blog->url}}/thumbs/{{$i}}.jpg" alt="">
+                                <a href="/images/review/{{$blog->url}}/{{$i}}.{{$blog->image_filetype}}"  data-gallery>
+                                    <img class="figure-thumb blueimp-gallery-controls" src="/images/review/{{$blog->url}}/thumbs/{{$i}}.{{$blog->image_filetype}}" alt="">
                                 </a>                 
                             @endfor                               
                             </div>
