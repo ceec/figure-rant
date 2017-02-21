@@ -10,7 +10,8 @@
             <div class="row">
                 <?php
                     //format the url 
-                    $folder = str_replace('nendoroid-','',$nendo->url);
+                    //$folder = str_replace('nendoroid-','',$nendo->url);
+                    $folder = $nendo->url;
                 ?>
                 <div class="col-md-3">
                     <h3>{{$nendo->name}}</h3>
@@ -24,22 +25,22 @@
                         <a target="_blank" href="http://www.amiami.com/top/detail/detail?gcode={{$nendo->amiami_id}}">AmiAmi Link</a>
                     </p>
                 </div>
-                <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
+                <div class="col-md-3">                
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/prototype.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/prototype.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-prototype.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-prototype.jpg">
                         Prototype Seen: {{$nendo->seen_date}}
                     @endif
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/released.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/released.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-released.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-released.jpg">
                         Preorders opened: {{$nendo->available_date}}
                     @endif
                 </div>                  
@@ -51,7 +52,8 @@
             <div class="row">
                 <?php
                     //format the url 
-                    $folder = str_replace('nendoroid-','',$nendo->url);
+                    //$folder = str_replace('nendoroid-','',$nendo->url);
+                    $folder = $nendo->url;
                 ?>
                 <div class="col-md-3">
                     <h3>{{$nendo->name}}</h3>
@@ -63,21 +65,21 @@
                     </p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/prototype.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/prototype.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-prototype.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-prototype.jpg">
                         Prototype Seen: {{$nendo->seen_date}}
                     @endif
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/released.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/released.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-released.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-released.jpg">
                         Preorders opened: {{$nendo->available_date}}
                     @endif
                 </div>                  
@@ -89,7 +91,8 @@
             <div class="row">
                 <?php
                     //format the url 
-                    $folder = str_replace('nendoroid-','',$nendo->url);
+                    //$folder = str_replace('nendoroid-','',$nendo->url);
+                     $folder = $nendo->url;
                 ?>
                 <div class="col-md-3">
                     <h3>{{$nendo->name}}</h3>
@@ -97,21 +100,21 @@
                     <p></p>
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/concept.jpg')))
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-concept.jpg')))
 
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/concept.jpg">
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-concept.jpg">
                         Announced: {{$nendo->announce_date}}
                     @endif
                 </div>                
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/prototype.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/prototype.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-prototype.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-prototype.jpg">
                         Prototype Seen: {{$nendo->seen_date}}
                     @endif
                 </div>
                 <div class="col-md-3">
-                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'/released.jpg')))
-                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}/released.jpg">
+                    @if (file_exists(public_path('/images/nendoroids/'.$folder.'-released.jpg')))
+                        <img class="img-responsive" src="/images/nendoroids/{{$folder}}-released.jpg">
                         Preorders opened: {{$nendo->available_date}}
                     @endif
                 </div>                  
