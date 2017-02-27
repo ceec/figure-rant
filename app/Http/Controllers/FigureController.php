@@ -30,7 +30,7 @@ class FigureController extends Controller
      */
 
     public static function total() {
-        $amount = Collection::all()->count();
+        $amount = Figures::all()->count();
 
         return $amount;
     }
