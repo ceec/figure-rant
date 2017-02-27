@@ -22,18 +22,21 @@ class FigureController extends Controller
 
 
 
-
-    /**
+      /**
      * Get total amount of figures
      *
      * @return \Illuminate\Http\Response
      */
 
-    public static function total() {
-        $amount = Figure::all()->count();
+    public static function stats() {
+        $stats['total'] = Figure::all()->count();
+        $stats['preorders'] = Figure::where('status_id','=','3')->count();
+        $stats['nendos'] = Figure::where('productline_id','=','1')->count();
+        $stats['sayakas'] = Figure::where('character_id','=','4')->count();
+        $stats['choppers'] = Figure::where('character_id','=','329')->count();        
+        return $stats;
+    }  
 
-        return $amount;
-    }
 
 
 }

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10">
-            <h2>Collection - {{$total}} figures</h2>
+            <h2>Collection - {{$total['total']}} figures</h2>
                 <h3>1/8 Scale - {{$amount18[0]->count}} figures</h3>
                 <div class="row">
                     <?php $x=1; ?>

@@ -44,7 +44,7 @@ class DisplayController extends Controller
         $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->paginate(10);
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
         return view('welcome')
             ->with('tags',$tags)
@@ -91,7 +91,7 @@ class DisplayController extends Controller
         //$random_figure = FigureController::getRandomFigure();
 
        //how many in total
-       $total = FigureController::total();        
+       $total = FigureController::stats();        
 
         return view('display.blog')
             ->with('total',$total)          
@@ -157,7 +157,7 @@ class DisplayController extends Controller
        $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
         return view('display.about')
           ->with('scale18',$scale18)
@@ -232,7 +232,7 @@ class DisplayController extends Controller
        $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
         return view('display.figures')
           ->with('scale18',$scale18)
@@ -279,7 +279,7 @@ class DisplayController extends Controller
        $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
 
 
@@ -311,7 +311,7 @@ class DisplayController extends Controller
     public function order($order_id) {
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
 
        $order = Order::find($order_id);
@@ -337,7 +337,7 @@ class DisplayController extends Controller
     public function orders() {
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
        //$orders = Order::orderBy('order_date','desc')->get();
         $orders = Order::orderBy('id','desc')->get();
@@ -396,7 +396,7 @@ class DisplayController extends Controller
     public function rants() {
 
        //how many in total
-       $total = FigureController::total();
+       $total = FigureController::stats();
 
         $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->where('type','=','rant')->paginate(10);
 
@@ -416,7 +416,7 @@ class DisplayController extends Controller
     public function reviews() {
 
         //how many in total
-        $total = FigureController::total();
+        $total = FigureController::stats();
 
         $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->where('type','=','review')->paginate(10);        
 
@@ -432,7 +432,7 @@ class DisplayController extends Controller
      */
     public function news() {
         //how many in total
-        $total = FigureController::total();
+        $total = FigureController::stats();
         $blogs = Blog::orderBy('created_at','desc')->where('active','=','1')->where('type','=','news')->paginate(10);
 
         return view('welcome')
@@ -448,7 +448,7 @@ class DisplayController extends Controller
      */
     public function toolAmiAmiSearch() {
 
-      $total = FigureController::total();
+      $total = FigureController::stats();
         return view('tools.amiamisearch')
          ->with('total',$total);
     }   

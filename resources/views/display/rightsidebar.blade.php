@@ -1,13 +1,13 @@
 <h3>Stats</h3>
-<h4>Current Figures: {{$total}}</h4>
+<h4>Current Figures: {{$total['total']}}</h4>
 
-<h4>Pre-ordered: 13</h4>
+<h4>Pre-ordered: {{$total['preorders']}}</h4>
 
-<h4>Nendoroids: 32</h4>
+<h4>Nendoroids: {{$total['nendos']}}</h4>
 
-<h4>Sayakas: 6</h4>
+<h4>Sayakas: {{$total['sayakas']}}</h4>
 
-<h4>Choppers: 6</h4>
+<h4>Choppers: {{$total['choppers']}}</h4>
 <!--<h4>One Piece: 34/79</h4>-->
 <!--<h3>Price Info</h3>
 <h4><a href="http://www.figureprices.com/">Figureprices</a></h4>-->
