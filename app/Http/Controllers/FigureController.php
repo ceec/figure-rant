@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
-use App\Collection;
+use App\Figure;
 
 
 class FigureController extends Controller
@@ -30,7 +30,7 @@ class FigureController extends Controller
      */
 
     public static function total() {
-        $amount = Figures::all()->count();
+        $amount = Figure::all()->count();
 
         return $amount;
     }
