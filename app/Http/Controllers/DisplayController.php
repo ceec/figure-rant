@@ -9,6 +9,7 @@ use App\Figure;
 use App\Collection;
 use App\Order;
 use App\Store;
+use App\Nendoroid;
 use App\Services\RssFeed;
 use Suin\RSSWriter\Channel;
 use Suin\RSSWriter\Feed;
@@ -453,6 +454,24 @@ class DisplayController extends Controller
          ->with('total',$total);
     }   
 
+
+     /**
+     * nendoroid tracker
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function nendoroidTracker() {
+       //how many in total
+       $total = FigureController::stats();
+
+       $nendoavailable = Nendoroid::where('productline_id','=',1)->where('status_id','!=',1)->orderBy('item_number','desc')->get();
+       $nendoannounce = Nendoroid::where('productline_id','=',1)->where('status_id','=',1)->get();       
+
+        return view('tools.nendoroidTracker')
+          ->with('nendoavailable',$nendoavailable)
+          ->with('nendoannounce',$nendoannounce)
+          ->with('total',$total);
+    }   
 
 
     /**

@@ -36,6 +36,8 @@ Route::get('/createrss','DisplayController@rss');
 
 //tools
 Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
+Route::get('/tools/amiami-search', 'DisplayController@toolAmiAmiSearch');
+Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTracker');
 
 
 //contact form
