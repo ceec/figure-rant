@@ -464,7 +464,7 @@ class DisplayController extends Controller
        //how many in total
        $total = FigureController::stats();
 
-       $nendoavailable = Nendoroid::where('productline_id','=',1)->where('status_id','!=',1)->orderBy('item_number','desc')->get();
+       $nendoavailable = Nendoroid::where('productline_id','=',1)->where('status_id','!=',1)->orderBy('available_date','desc')->get();
        $nendoannounce = Nendoroid::where('productline_id','=',1)->where('status_id','=',1)->get();       
 
         return view('tools.nendoroidTracker')
