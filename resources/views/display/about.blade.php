@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-10">
             <h2>Collection - {{$total['total']}} figures</h2>
-                <h3>1/8 Scale - {{$amount18[0]->count}} figures</h3>
+                <h3>1/8 Scale - {{$amount18}} figures</h3>
                 <div class="row">
                     <?php $x=1; ?>
                     @foreach($scale18 as $figure)
@@ -29,7 +29,7 @@
                     @endforeach
                 </div>
                 <!-- 1/7 scales -->
-                <h3>1/7 Scale - {{$amount17[0]->count}} figures</h3>
+                <h3>1/7 Scale - {{$amount17}} figures</h3>
                 <div class="row">
                     <?php $x=1; ?>
                     @foreach($scale17 as $figure)
@@ -53,7 +53,7 @@
                     @endforeach
                 </div>
                 <!-- 1/6 scales -->
-                <h3>1/6 Scale - {{$amount16[0]->count}} figures</h3>
+                <h3>1/6 Scale - {{$amount16}} figures</h3>
                 <div class="row">
                     <?php $x=1; ?>
                     @foreach($scale16 as $figure)
@@ -77,7 +77,7 @@
                     @endforeach
                 </div>
                 <!-- Nendoroids -->
-                 <h3>Nendoroids - {{$amountnendos[0]->count}} figures</h3>
+                 <h3>Nendoroids - {{$amountnendos}} figures</h3>
                 <div class="row">
                 <?php $x=1; ?>
                 @foreach($nendos as $figure)
@@ -101,7 +101,7 @@
                 @endforeach
                 </div>
                 <!-- Nendoroid Co-de -->
-                 <h3>Nendoroid Co-des - {{$amountnendocodes[0]->count}} figures</h3>
+                 <h3>Nendoroid Co-des - {{$amountnendocodes}} figures</h3>
                 <div class="row">
                 <?php $x=1; ?>
                 @foreach($nendocodes as $figure)
@@ -125,7 +125,7 @@
                 @endforeach
                 </div>   
                  <!-- Nendoroid Petites -->
-                 <h3>Nendoroid Petites - {{$amountnendopetites[0]->count}} figures</h3>
+                 <h3>Nendoroid Petites - {{$amountnendopetites}} figures</h3>
                 <div class="row">
                 <?php $x=1; ?>
                 @foreach($nendopetites as $figure)
@@ -149,7 +149,7 @@
                 @endforeach
                 </div>                                     
                 <!-- Rest -->
-                 <h3>Other - {{$amountnendos[0]->count}} figures</h3>
+                 <h3>Other - {{$amountnendos}} figures</h3>
                 <div class="row">
                 <?php $x=1; ?>
                 @foreach($figures as $figure)

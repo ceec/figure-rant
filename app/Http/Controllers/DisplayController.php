@@ -112,42 +112,44 @@ class DisplayController extends Controller
      */
     public function about() {
        //$collection = Collection::where('user_id','=',1)->figures;
-       $scale18 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='1'");
+       $scale18 = Figure::where('scale_id','=','1')->get();
        //get how many scales
-       $amount18 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='1'");
+       $amount18 = Figure::where('scale_id','=','1')->count();
 
        //17 scales
-        $scale17 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='2'");
+        $scale17 = Figure::where('scale_id','=','2')->get();
        //get how many scales
-       $amount17 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='2'");    
+       $amount17 = Figure::where('scale_id','=','2')->count();
 
        //16 scales
-        $scale16 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='3'");
+        $scale16 = Figure::where('scale_id','=','3')->get();
        //get how many scales
-       $amount16 = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='3'");    
+       $amount16 = Figure::where('scale_id','=','3')->count(); 
 
        //nendos
-       $nendos = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");
+       $nendos = Figure::where('productline_id','=','1')->get();
+
        //amount nendos
-       $amountnendos = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='1'");    
+       $amountnendos = Figure::where('productline_id','=','1')->count(); 
 
 
        //nendo co-de
-       $nendocodes = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
-       $amountnendocodes = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='4'");
+       $nendocodes = Figure::where('productline_id','=','4')->get();
+       $amountnendocodes = Figure::where('productline_id','=','4')->count(); 
 
        //nendodroid petit
-       $nendopetites = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
-       $amountnendopetites = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='2'");
+       $nendopetites = Figure::where('productline_id','=','2')->get();
+       $amountnendopetites = Figure::where('productline_id','=','2')->count(); 
+
 
 
        //cu-pouche
-       $cupoches = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='5'");
-       $amountcupoches = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='5'");
+       $cupoches = Figure::where('productline_id','=','5')->get();
+       $amountcupoches = Figure::where('productline_id','=','5')->count(); 
 
        //figma
-       $figmas = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='6'");
-       $amountfigmas = DB::select("SELECT count(figures.id) as count FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.productline_id='6'");
+       $figmas = Figure::where('productline_id','=','6')->get();
+       $amountfigmas = Figure::where('productline_id','=','6')->count(); 
 
        //medicchu
 

@@ -25,7 +25,11 @@
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
                         <td>{{$order->shipment_date}}</td> 
+                        @if ($order->store_id > 0)
                         <td>{{$order->store->name}}</td>
+                        @else
+                         <td>{{$order->store_order_id}}</td>
+                        @endif
                         <td></td>
                         <td></td>
                         <td>
