@@ -16,8 +16,8 @@
                     <th>Status</th>
                     <th>Total Yen</th>
                     <th>Total USD</th>
-                    <th>Shipping Yen</th>
-                    <th>Shipping USD</th>                    
+                    <th>Ship Yen</th>
+                    <th>Ship USD</th>                    
                 </tr>
             </thead>
             <tbody>
