@@ -10,14 +10,14 @@
             <thead>
                 <tr>
                     <th>Order</th>
-                    <th>Ship Date</th>
+                    <th>Shipped</th>
                     <th>Store</th>
                     <th>Figures</th>
                     <th>Status</th>
-                    <th>Total Yen</th>
-                    <th>Total USD</th>
-                    <th>Ship Yen</th>
-                    <th>Ship USD</th>                    
+                    <th>Total &yen;</th>
+                    <th>Total $</th>
+                    <th>Ship &yen;</th>
+                    <th>Ship $</th>                    
                 </tr>
             </thead>
             <tbody>
