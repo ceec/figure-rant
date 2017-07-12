@@ -50,12 +50,12 @@
             <tr>
                 <td>#645</td>
                 <td>Genos</td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/6.JPG"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/8.JPG"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/7.JPG"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/9.JPG"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/10.JPG"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-genos/11.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/6.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/8.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/7.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/9.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/10.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/11.jpg"></td>
             </tr>      
             <tr>
                 <td>#632</td>
