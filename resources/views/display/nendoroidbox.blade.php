@@ -36,7 +36,47 @@
                 <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/8.JPG"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/9.JPG"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/10.JPG"></td>
-            </tr>            
+            </tr>  
+            <tr>
+                <td>#663</td>
+                <td>Rem</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/7.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/10.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/8.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/11.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/12.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-rem/13.JPG"></td>
+            </tr>    
+            <tr>
+                <td>#645</td>
+                <td>Genos</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/6.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/8.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/7.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/9.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/10.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-genos/11.JPG"></td>
+            </tr>      
+            <tr>
+                <td>#632</td>
+                <td>Shigure Kai-II</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/13.jpg"></td>
+                <td></td>
+                <td></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/14.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/17.jpg"></td>
+            </tr>    
+            <tr>
+                <td>#644</td>
+                <td>Luluco</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-luluco/8.jpg"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>                                                     
         </table>
 
         </div>
