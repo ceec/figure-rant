@@ -8,6 +8,7 @@
         
         <table class="table">
             <tr>
+                <td>#</td> 
                 <td>Name</td>
                 <td>Front</td>
                 <td>Back</td>
@@ -17,7 +18,8 @@
                 <td>Bottom</td>
             </tr>
             <tr>
-                <td>#690 Yamanbagiri Kunihiro</td>
+                <td>#690</td>
+                <td>Yamanbagiri Kunihiro</td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/5.JPG"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/7.JPG"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/6.JPG"></td>
@@ -25,6 +27,16 @@
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/9.JPG"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/10.JPG"></td>
             </tr>
+            <tr>
+                <td>#678</td>
+                <td>Tatsumaki</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/5.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/7.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/6.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/8.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/9.JPG"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-tatsumaki/10.JPG"></td>
+            </tr>            
         </table>
 
         </div>
