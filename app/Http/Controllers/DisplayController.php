@@ -476,6 +476,24 @@ class DisplayController extends Controller
     }   
 
 
+     /**
+     * nendoroid boxes
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function nendoroidBoxes() {
+       //how many in total
+       $total = FigureController::stats();
+
+       $nendoavailable = Nendoroid::where('productline_id','=',1)->where('status_id','!=',1)->orderBy('available_date','desc')->get();
+       $nendoannounce = Nendoroid::where('productline_id','=',1)->where('status_id','=',1)->get();       
+
+        return view('display.nendoroidbox')
+          ->with('nendoavailable',$nendoavailable)
+          ->with('nendoannounce',$nendoannounce)
+          ->with('total',$total);
+    }  
+
     /**
      * Contact page
      *
