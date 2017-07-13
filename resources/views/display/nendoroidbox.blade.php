@@ -76,7 +76,37 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>                                                     
+            </tr>
+            <tr>
+                <td>#694</td>
+                <td>Genos</td>
+                <td><img class="img-responsive" src="/images/review/694/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/6.jpg"></td>
+            </tr>  
+            <tr>
+                <td>#695</td>
+                <td>Genos</td>
+                <td><img class="img-responsive" src="/images/review/695/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/6.jpg"></td>
+            </tr>   
+            <tr>
+                <td>#704</td>
+                <td>Genos</td>
+                <td><img class="img-responsive" src="/images/review/704/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/6.jpg"></td>
+            </tr>                                                                                           
         </table>
 
         </div>
