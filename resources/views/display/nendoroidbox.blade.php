@@ -18,6 +18,36 @@
                 <td>Bottom</td>
             </tr>
             <tr>
+                <td>#704</td>
+                <td>Kato Megumi</td>
+                <td><img class="img-responsive" src="/images/review/704/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/704/6.jpg"></td>
+            </tr>               
+            <tr>
+                <td>#695</td>
+                <td>Yudachi Kai-II</td>
+                <td><img class="img-responsive" src="/images/review/695/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/695/6.jpg"></td>
+            </tr>             
+            <tr>
+                <td>#694</td>
+                <td>Betsu Ten Gai</td>
+                <td><img class="img-responsive" src="/images/review/694/1.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/3.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/4.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/5.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/694/6.jpg"></td>
+            </tr>             
+            <tr>
                 <td>#690</td>
                 <td>Yamanbagiri Kunihiro</td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-yamanbagiri-kunihiro/5.JPG"></td>
@@ -56,17 +86,7 @@
                 <td><img class="img-responsive" src="/images/review/nendoroid-genos/9.jpg"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-genos/10.jpg"></td>
                 <td><img class="img-responsive" src="/images/review/nendoroid-genos/11.jpg"></td>
-            </tr>      
-            <tr>
-                <td>#632</td>
-                <td>Shigure Kai-II</td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/2.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/13.jpg"></td>
-                <td></td>
-                <td></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/14.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/17.jpg"></td>
-            </tr>    
+            </tr>   
             <tr>
                 <td>#644</td>
                 <td>Luluco</td>
@@ -76,37 +96,17 @@
                 <td></td>
                 <td></td>
                 <td></td>
-            </tr>
+            </tr>               
             <tr>
-                <td>#694</td>
-                <td>Betsu Ten Gai</td>
-                <td><img class="img-responsive" src="/images/review/694/1.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/694/3.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/694/2.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/694/4.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/694/5.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/694/6.jpg"></td>
-            </tr>  
-            <tr>
-                <td>#695</td>
-                <td>Yudachi Kai-II</td>
-                <td><img class="img-responsive" src="/images/review/695/1.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/695/2.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/695/3.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/695/4.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/695/5.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/695/6.jpg"></td>
-            </tr>   
-            <tr>
-                <td>#704</td>
-                <td>Kato Megumi</td>
-                <td><img class="img-responsive" src="/images/review/704/1.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/704/2.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/704/3.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/704/4.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/704/5.jpg"></td>
-                <td><img class="img-responsive" src="/images/review/704/6.jpg"></td>
-            </tr>                                                                                           
+                <td>#632</td>
+                <td>Shigure Kai-II</td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/2.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/13.jpg"></td>
+                <td></td>
+                <td></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/14.jpg"></td>
+                <td><img class="img-responsive" src="/images/review/nendoroid-shigure-kai-ii/17.jpg"></td>
+            </tr>                                                                                            
         </table>
 
         </div>
