@@ -12,7 +12,7 @@
                         <div class="col-md-4">
                             <div class="collection-panel panel-default ">
                               <div class="panel-body">
-                                <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                                <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                                 <h3 class="collection-title">{{$figure->name}}</h3>
                               </div>
                             </div>
@@ -36,7 +36,7 @@
                         <div class="col-md-4">
                             <div class="collection-panel panel-default ">
                               <div class="panel-body">
-                                <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                                <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                                 <h3 class="collection-title">{{$figure->name}}</h3>
                               </div>
                             </div>
@@ -60,7 +60,7 @@
                         <div class="col-md-4">
                             <div class="collection-panel panel-default ">
                               <div class="panel-body">
-                                <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                                <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                                 <h3 class="collection-title">{{$figure->name}}</h3>
                               </div>
                             </div>
@@ -84,7 +84,7 @@
                     <div class="col-md-4">
                         <div class="collection-panel panel-default ">
                           <div class="panel-body">
-                            <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                            <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                             <h3 class="collection-title">{{$figure->name}}</h3>                            
                           </div>
                         </div>
@@ -108,7 +108,7 @@
                     <div class="col-md-4">
                         <div class="collection-panel panel-default ">
                           <div class="panel-body">
-                            <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                            <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                             <h3 class="collection-title">{{$figure->name}}</h3>                            
                           </div>
                         </div>
@@ -132,7 +132,7 @@
                     <div class="col-md-4">
                         <div class="collection-panel panel-default ">
                           <div class="panel-body">
-                            <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                            <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                             <h3 class="collection-title">{{$figure->name}}</h3>                            
                           </div>
                         </div>
@@ -156,7 +156,7 @@
                     <div class="col-md-4">
                         <div class="collection-panel panel-default ">
                           <div class="panel-body">
-                            <img class="img-responsive" src="/images/{{$figure->url}}.jpg">
+                            <img class="img-responsive" src="/images/collection/{{$figure->url}}.jpg">
                             <h3 class="collection-title">{{$figure->name}}</h3>                            
                           </div>
                         </div>
