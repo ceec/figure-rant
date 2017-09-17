@@ -12,7 +12,7 @@ For Sale | Figure Rant
 
           <h1>For Sale</h1>
           <p>Shipping from Colorado, US. Will ship worldwide, shipping not included.</p>
-          <img src="/images/sale/2017-09-16-scales.JPG">
+          <img src="/images/sale/2017-09-16-scales.jpg">
           <h2>Scales</h2>
           <table class="table">
             <tr>
@@ -52,7 +52,7 @@ For Sale | Figure Rant
               <td><a href="https://myfigurecollection.net/item/167229">MFC</a></td>              
             </tr>                                                
           </table>
-          <img src="/images/sale/2017-09-16-nendoroids.JPG">
+          <img src="/images/sale/2017-09-16-nendoroids.jpg">
           <h2>Nendoroids</h2>
 
           <h3>New - Unopened box, bought from GSC</h3>
