@@ -34,6 +34,9 @@ Route::get('/review/{url}', 'DisplayController@article');
 //generate the rss feed
 Route::get('/createrss','DisplayController@rss');
 
+//sale
+Route::get('/sale','DisplayController@sale');
+
 //tools
 Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
 Route::get('/tools/amiami-search', 'DisplayController@toolAmiAmiSearch');

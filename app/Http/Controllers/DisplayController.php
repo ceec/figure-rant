@@ -494,6 +494,17 @@ class DisplayController extends Controller
           ->with('total',$total);
     }  
 
+
+    /**
+     * Sale page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sale() {
+        return view('display.sale');
+    }
+
+
     /**
      * Contact page
      *
