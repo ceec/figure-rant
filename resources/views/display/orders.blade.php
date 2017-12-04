@@ -9,7 +9,8 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Order</th>
+                    <th>#</th>
+                    <th>Orderd</th>
                     <th>Shipped</th>
                     <th>Store</th>
                     <th>Figures</th>
@@ -25,6 +26,7 @@
                 @foreach($orders as $order)
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
+                        <td>{{$order->order_date}}</td> 
                         <td>{{$order->shipment_date}}</td> 
                         @if ($order->store_id > 0)
                         <td>{{$order->store->name}}</td>
@@ -56,6 +58,7 @@
                         <td>{{$order->shipment_type}}</td>
                     </tr>
                     <tr>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -104,6 +107,7 @@
                 <tfoot>
                     <tr>
                         <td><strong>Total</strong></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
