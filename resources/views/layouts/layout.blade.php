@@ -60,7 +60,7 @@
                     <li><a href="{{ url('/rants') }}">Rants</a></li>
                     <li><a href="{{ url('/reviews') }}">Reviews</a></li>
                     <li><a href="{{ url('/news') }}">News</a></li>
-                    <li><a href="{{ url('/tools') }}">Tools</a></li>                    
+                    <!--<li><a href="{{ url('/tools') }}">Tools</a></li>-->                    
                     <li><a href="{{ url('/about') }}">About</a></li>
                 </ul>
             </div>
