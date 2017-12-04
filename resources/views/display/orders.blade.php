@@ -17,7 +17,8 @@
                     <th>Total &yen;</th>
                     <th>Total $</th>
                     <th>Ship &yen;</th>
-                    <th>Ship $</th>                    
+                    <th>Ship $</th>    
+                    <th>Type</th>                
                 </tr>
             </thead>
             <tbody>
@@ -51,7 +52,9 @@
                             @if($order->shipping_usd != '0')
                                 ${{$order->shipping_usd}}
                             @endif
-                        </td>                    </tr>
+                        </td>  
+                        <td>{{$order->shipment_type}}</td>
+                    </tr>
                     <tr>
                         <td></td>
                         <td></td>
@@ -93,7 +96,8 @@
                             @endforeach                            
                         </td>
                         <td></td>
-                        <td></td>                        
+                        <td></td>    
+                        <td></td>                    
                     </tr>
                 @endforeach
                 </tbody>
@@ -107,7 +111,8 @@
                         <td>{{$total_yen}}</td>
                         <td>${{$total_usd}}</td>
                         <td>{{$total_shipping_yen}}</td>
-                        <td>${{$total_shipping_usd}}</td>                        
+                        <td>${{$total_shipping_usd}}</td>    
+                        <td></td>                    
                     </tr>
                 </tfoot>
             </table>
