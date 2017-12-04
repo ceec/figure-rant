@@ -63,8 +63,8 @@
                         <td>
                             @foreach($order->figures as $figure)
                                 <?php 
-                                    //$name = substr($figure->name,0,35);
-                                    $name = $figure->name;
+                                    $name = substr($figure->name,0,35);
+                                    //$name = $figure->name;
                                 ?>
                                 {{$name}}<br>
                             @endforeach
