@@ -506,6 +506,19 @@ class DisplayController extends Controller
 
 
     /**
+     * Graphs page
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function graphs() {
+        return view('display.graphs');
+    }
+
+
+
+/////////////////////////////////
+
+    /**
      * Contact page
      *
      * @return \Illuminate\Http\Response

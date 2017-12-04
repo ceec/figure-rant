@@ -42,6 +42,10 @@ Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
 Route::get('/tools/amiami-search', 'DisplayController@toolAmiAmiSearch');
 Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTracker');
 
+//daata
+Route::get('/graphs', 'DisplayController@graphs');
+Route::get('/data/yenusd','DataController@yenusd');
+
 //nendoroid info
 Route::get('/nendoroid-boxes','DisplayController@nendoroidBoxes');
 
