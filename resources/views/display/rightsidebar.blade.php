@@ -1,5 +1,5 @@
-<h3>Stats</h3>
-<h4>Current Figures: {{$total['total']}}</h4>
+<h3>Figure Stats</h3>
+<h4>Owned: {{$total['total']}}</h4>
 
 <h4>Pre-ordered: {{$total['preorders']}}</h4>
 

@@ -6,6 +6,7 @@
         <div class="col-md-12">
 
             <h1>Graphs</h1>
+            <h2>Yen/USD</h2>
             <style>
             #chartdiv {
   width: 100%;
@@ -73,8 +74,62 @@ var chart = AmCharts.makeChart( "chartdiv", {
 } );
 
 </script>
+    
+        <h2>Total orders over time</h2>
+<div id="chartdiv2"></div>                                           
+<script>
 
 
+
+var chart = AmCharts.makeChart( "chartdiv2", {
+  "theme": "light",
+  "type": "serial",
+  "dataLoader": {
+    "url": "/data/totalorders",
+    "format": "json"
+  },
+  "valueAxes": [ {
+    "inside": true,
+    "axisAlpha": 0
+  },{
+    "id": "usd",
+    "position": "right"
+  } ],
+  "graphs": [ {
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>",
+    "bullet": "round",
+    "bulletBorderAlpha": 1,
+    "bulletBorderColor": "#FFFFFF",
+    "hideBulletsCount": 50,
+    "lineThickness": 2,
+    "negativeLineColor": "#67b7dc",
+    "valueField": "total_usd",
+    "valueAxis": "usd"
+  } ,
+  {
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>",
+    "bullet": "round",
+    "bulletBorderAlpha": 1,
+    "bulletBorderColor": "#FFFFFF",
+    "hideBulletsCount": 50,
+    "lineThickness": 2,
+    "lineColor": "#fdd400",
+    "negativeLineColor": "#67b7dc",
+    "valueField": "total_yen"
+  } ],
+  "chartScrollbar": {
+
+  },
+  "chartCursor": {},
+  "categoryField": "payment_date",
+  "categoryAxis": {
+    "parseDates": true,
+    "axisAlpha": 0,
+    "minHorizontalGap": 55
+  }
+} );
+
+</script>
         </div>
 
     </div>
