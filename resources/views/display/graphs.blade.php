@@ -47,20 +47,9 @@ var chart = AmCharts.makeChart( "chartdiv", {
     "hideBulletsCount": 50,
     "lineThickness": 2,
     "negativeLineColor": "#67b7dc",
-    "valueField": "total_usd",
+    "valueField": "rate",
     "valueAxis": "usd"
-  } ,
-  {
-    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>",
-    "bullet": "round",
-    "bulletBorderAlpha": 1,
-    "bulletBorderColor": "#FFFFFF",
-    "hideBulletsCount": 50,
-    "lineThickness": 2,
-    "lineColor": "#fdd400",
-    "negativeLineColor": "#67b7dc",
-    "valueField": "total_yen"
-  } ],
+  }],
   "chartScrollbar": {
 
   },
