@@ -1,4 +1,10 @@
-<h3>Figure Stats</h3>
+<h3>Figure History</h3>
+<p>2018-01-10<br>
+<strong>Pre-order</strong>
+<br>Nendoroid Lotte
+<br>Nendoroid Kiragiri
+<br>Nendoroid Hizamaru
+<br>Nendoroid Coat One</p>
 <h4>Owned: {{$total['total']}}</h4>
 
 <h4>Pre-ordered: {{$total['preorders']}}</h4>
