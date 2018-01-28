@@ -40,7 +40,26 @@ class DataController extends Controller
      */
 
     public static function totalorders() {
-        $orders = Order::all();
+        $orders = Order::orderBy('order_date','asc')->get();
+
+        foreach($orders as $order) {
+            //need to normalize yen vs usd
+
+            if ($order->total_usd != 0.00) {
+                //its usd
+                $order->items = ($order->total_usd - $order->shipping_usd) / $order->total_usd;
+                $order->shipping = $order->shipping_usd / $order->total_usd;
+            } else {
+                if ($order->total_yen != 0) {
+                    //its yen
+                    $order->items = ($order->total_yen - $order->shipping_yen) / $order->total_yen;
+                    $order->shipping = $order->shipping_yen / $order->total_yen;                      
+                }
+              
+            }
+
+
+        }
 
 
         print json_encode($orders);

@@ -92,7 +92,7 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   },
   "legend": {},
     "valueAxes": [{
-        "stackType": "regular",
+         "stackType": "100%",
         "axisAlpha": 0.3,
         "gridAlpha": 0
     }],
@@ -101,13 +101,13 @@ var chart = AmCharts.makeChart( "chartdiv2", {
     "type": "column",
      "fillAlphas": 1,
      "title": "Shipping",
-    "valueField": "shipping_yen"
+    "valueField": "shipping"
   } ,{
     "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[value]]</div>",
     "type": "column",
      "fillAlphas": 1,
      "title": "Items",
-    "valueField": "items_yen",
+    "valueField": "items",
   } 
 ],
   "chartScrollbar": {
