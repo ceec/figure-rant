@@ -12,6 +12,12 @@
   width: 100%;
   height: 500px;
 }
+
+
+            #chartdiv2 {
+  width: 100%;
+  height: 500px;
+}
             </style>
             <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
 <script src="https://www.amcharts.com/lib/3/serial.js"></script>
@@ -64,7 +70,7 @@ var chart = AmCharts.makeChart( "chartdiv", {
 
 </script>
     
-        <h2>Total orders over time</h2>
+        <h2>Shipping vs Total Order</h2>
 <div id="chartdiv2"></div>                                           
 <script>
 
@@ -75,44 +81,42 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   "type": "serial",
   "dataLoader": {
     "url": "/data/totalorders",
-    "format": "json"
+    "format": "json",
+    "postProcess": function(data) {
+      for (var i = data.length - 1; i >= 0; i--) {
+        data[i].items_yen = data[i].total_yen - data[i].shipping_yen;
+      };
+      console.log(data);
+      return data;
+    }
   },
-  "valueAxes": [ {
-    "inside": true,
-    "axisAlpha": 0
-  },{
-    "id": "usd",
-    "position": "right"
-  } ],
-  "graphs": [ {
-    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>",
-    "bullet": "round",
-    "bulletBorderAlpha": 1,
-    "bulletBorderColor": "#FFFFFF",
-    "hideBulletsCount": 50,
-    "lineThickness": 2,
-    "negativeLineColor": "#67b7dc",
-    "valueField": "total_usd",
-    "valueAxis": "usd"
-  } ,
-  {
-    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[category]]</span><br>[[value]]</div>",
-    "bullet": "round",
-    "bulletBorderAlpha": 1,
-    "bulletBorderColor": "#FFFFFF",
-    "hideBulletsCount": 50,
-    "lineThickness": 2,
-    "lineColor": "#fdd400",
-    "negativeLineColor": "#67b7dc",
-    "valueField": "total_yen"
-  } ],
+  "legend": {},
+    "valueAxes": [{
+        "stackType": "regular",
+        "axisAlpha": 0.3,
+        "gridAlpha": 0
+    }],
+  "graphs": [   {
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[value]]</div>",
+    "type": "column",
+     "fillAlphas": 1,
+     "title": "Shipping",
+    "valueField": "shipping_yen"
+  } ,{
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[value]]</div>",
+    "type": "column",
+     "fillAlphas": 1,
+     "title": "Items",
+    "valueField": "items_yen",
+  } 
+],
   "chartScrollbar": {
 
   },
   "chartCursor": {},
-  "categoryField": "payment_date",
+  "categoryField": "order_date",
   "categoryAxis": {
-    "parseDates": true,
+    //"parseDates": true,
     "axisAlpha": 0,
     "minHorizontalGap": 55
   }

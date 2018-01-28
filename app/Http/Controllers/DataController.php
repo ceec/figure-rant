@@ -33,4 +33,18 @@ class DataController extends Controller
 
 
 
+      /**
+     * Get orders by year
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public static function totalorders() {
+        $orders = Order::all();
+
+
+        print json_encode($orders);
+    }  
+
+
 }

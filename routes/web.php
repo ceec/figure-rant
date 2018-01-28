@@ -45,6 +45,8 @@ Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTracker');
 //daata
 Route::get('/graphs', 'DisplayController@graphs');
 Route::get('/data/yenusd','DataController@yenusd');
+Route::get('/data/totalorders','DataController@totalorders');
+
 
 //nendoroid info
 Route::get('/nendoroid-boxes','DisplayController@nendoroidBoxes');
