@@ -188,6 +188,7 @@ class DisplayController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function figures() {
+        //2018-01-28 
        //$collection = Collection::where('user_id','=',1)->figures;
        $scale18 = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id ='1'");
        //get how many scales
@@ -228,11 +229,18 @@ class DisplayController extends Controller
 
        //medicchu
 
+
        //prize figures
 
-
-
        $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
+
+
+       //2018-01-28
+       //lets make this more of a database type page, like orders
+
+       $figures = Figure::all();
+
+
 
        //how many in total
        $total = FigureController::stats();
