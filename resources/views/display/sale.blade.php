@@ -14,10 +14,10 @@ For Sale | Figure Rant
           <p>Shipping from Colorado, US. Will ship worldwide, shipping not included.</p>
           <div class="row">
             <div class="col-md-6">
-              <img src="/images/sale/0202181416.jpg">
+              <img class="img-responsive" src="/images/sale/0202181416.jpg">
             </div>
             <div class="col-md-6">
-              <img src="/images/sale/0202181419.jpg">
+              <img class="img-responsive" src="/images/sale/0202181419.jpg">
             </div>
           </div>
           
@@ -97,13 +97,13 @@ For Sale | Figure Rant
 
           <div class="row">
             <div class="col-md-4">
-              <img src="/images/sale/0202181424.jpg">
+              <img class="img-responsive" src="/images/sale/0202181424.jpg">
             </div>
             <div class="col-md-4">
-              <img src="/images/sale/0202181425.jpg">
+              <img class="img-responsive" src="/images/sale/0202181425.jpg">
             </div>
             <div class="col-md-4">
-              <img src="/images/sale/0202181426.jpg">
+              <img class="img-responsive" src="/images/sale/0202181426.jpg">
             </div>            
           </div>
           <h3>Opened</h3>
