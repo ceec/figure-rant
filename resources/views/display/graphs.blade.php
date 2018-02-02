@@ -92,33 +92,31 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   },
   "legend": {},
     "valueAxes": [{
-         "stackType": "100%",
+         //"stackType": "100%",
+          "stackType": "regular",
         "axisAlpha": 0.3,
         "gridAlpha": 0
     }],
   "graphs": [   {
-    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[value]]</div>",
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[shipping_yen]]</div>",
     "type": "column",
      "fillAlphas": 1,
      "title": "Shipping",
     "valueField": "shipping"
   } ,{
-    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[value]]</div>",
+    "balloonText": "<div style='margin:5px; font-size:19px;'><span style='font-size:13px;'>[[title]]</span><br>[[items_yen]]</div>",
     "type": "column",
      "fillAlphas": 1,
      "title": "Items",
     "valueField": "items",
   } 
 ],
-  "chartScrollbar": {
-
-  },
   "chartCursor": {},
   "categoryField": "order_date",
   "categoryAxis": {
+    "labelRotation": 45
     //"parseDates": true,
-    "axisAlpha": 0,
-    "minHorizontalGap": 55
+    //"equalSpacing": true
   }
 } );
 

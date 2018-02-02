@@ -47,13 +47,13 @@ class DataController extends Controller
 
             if ($order->total_usd != 0.00) {
                 //its usd
-                $order->items = ($order->total_usd - $order->shipping_usd) / $order->total_usd;
-                $order->shipping = $order->shipping_usd / $order->total_usd;
+                $order->items = round(($order->total_usd - $order->shipping_usd) / $order->total_usd,2);
+                $order->shipping = round($order->shipping_usd / $order->total_usd,2);
             } else {
                 if ($order->total_yen != 0) {
                     //its yen
-                    $order->items = ($order->total_yen - $order->shipping_yen) / $order->total_yen;
-                    $order->shipping = $order->shipping_yen / $order->total_yen;                      
+                    $order->items = round(($order->total_yen - $order->shipping_yen) / $order->total_yen,2);
+                    $order->shipping = round($order->shipping_yen / $order->total_yen,2);                      
                 }
               
             }

@@ -24,7 +24,7 @@
                             {{$figure->manufacturer_id}}
                         </td>
                         <td>
-                            {{$figure->group}}
+                            {{$figure->group_id}}
                         </td>  
                         <td>
                             {{$figure->character_id}}
