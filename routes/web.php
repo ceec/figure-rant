@@ -118,5 +118,7 @@ Route::post('/edit/blog','BlogController@edit');
 
 
 
+////meessssing around
 
+Route::get('/tool/addnendos','FiguredbController@addNendos');
 
