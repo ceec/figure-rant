@@ -16,6 +16,8 @@ use Suin\RSSWriter\Feed;
 use Suin\RSSWriter\Item;
 use DB;
 
+use App\FigureDB;
+
 use App\Message;
 
 class DisplayController extends Controller
@@ -470,7 +472,7 @@ class DisplayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function nendoroidTracker() {
+    public function nendoroidTrackerOld() {
        //how many in total
        $total = FigureController::stats();
 
@@ -483,6 +485,26 @@ class DisplayController extends Controller
           ->with('total',$total);
     }   
 
+
+
+         /**
+     * nendoroid tracker
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function nendoroidTracker() {
+       //how many in total
+       //$total = FigureController::stats();
+
+       //$nendoavailable = Nendoroid::where('productline_id','=',1)->where('status_id','!=',1)->orderBy('available_date','desc')->get();
+       //$nendoannounce = Nendoroid::where('productline_id','=',1)->where('status_id','=',1)->get();    
+       
+       //get new figure db
+       $figures = FigureDB::all();
+
+        return view('display.nendoroidTracker')
+          ->with('figures',$figures);
+    }  
 
      /**
      * nendoroid boxes

@@ -40,7 +40,11 @@ Route::get('/sale','DisplayController@sale');
 //tools
 Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
 Route::get('/tools/amiami-search', 'DisplayController@toolAmiAmiSearch');
-Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTracker');
+Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTrackerOld');
+
+//nendotracker - new version 2018-03-24
+Route::get('/nendoroid-tracker', 'DisplayController@nendoroidTracker');
+
 
 //daata
 Route::get('/graphs', 'DisplayController@graphs');
