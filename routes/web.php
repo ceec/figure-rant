@@ -121,6 +121,13 @@ Route::post('/add/blog','BlogController@add');
 Route::post('/edit/blog','BlogController@edit');
 
 
+///add edit figure
+Route::get('/home/figure/add','FigureController@addDisplay');
+Route::get('/home/figure/edit/{figure_id}','FigureController@editDisplay');
+Route::get('/home/figure/list','FigureController@listDisplay');
+//posting
+Route::post('/add/figure','FigureController@add');
+Route::post('/edit/figure','FigureController@edit');
 
 ////meessssing around
 

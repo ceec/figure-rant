@@ -15,7 +15,11 @@
                         <a href="/home/blog/add">Add New Blog</a><br>
                         <a href="/home/blog/list">Edit Blog</a><br>
                     </div>
-                                      
+                    <div class="col-md-6">
+                        <h3>Figures</h3>
+                        <a href="/home/figure/add">Add New Figure</a><br>
+                        <a href="/home/figure/list">Edit Figure</a><br>
+                    </div>                                      
                 </div>
 
                 </div>
