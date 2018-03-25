@@ -6,7 +6,14 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
 use App\Figure;
+
 use App\FigureDB;
+use App\Group;
+use App\Character;
+use App\Productline;
+use App\Sculptor;
+use App\Manufacturer;
+use App\Scale;
 
 use Auth;
 
@@ -67,7 +74,7 @@ class FigureController extends Controller
         $f->manufacturer_url = '';
         $f->amiami_id = '';
         $f->mandarake_id = '';
-        $f->updated_by = 1;  
+        $f->updated_by = Auth::id();  
         $f->save();
 
 
@@ -99,7 +106,30 @@ class FigureController extends Controller
     public function editDisplay($figure_id) {
             $figure = FigureDB::find($figure_id);
 
+            //need to pull lists for everything!
+            $groups = Group::orderBy('name','ASC')->pluck('name','id');
+            $characters = Character::orderBy('name','ASC')->pluck('name','id');
+            $sculptors = Sculptor::orderBy('name','ASC')->pluck('name','id');
+            $scales = Scale::orderBy('name','ASC')->pluck('name','id');
+            $manufacturers = Manufacturer::orderBy('name','ASC')->pluck('name','id');
+            $productlines = Productline::orderBy('name','ASC')->pluck('name','id');
+
+            ///add the 0 Unknown placeholders
+            $collections = [$groups,$characters,$sculptors,$scales,$manufacturers,$productlines];
+
+            foreach($collections as $collection) {
+                $collection->prepend('Unknown',0);
+            }
+           
+            
+
             return view('home.figureEdit')
+            ->with('groups',$groups)
+            ->with('characters',$characters)
+            ->with('sculptors',$sculptors)
+            ->with('scales',$scales)
+            ->with('manufacturers',$manufacturers)
+            ->with('productlines',$productlines)
             ->with('figure',$figure);
     } 
 
@@ -114,8 +144,29 @@ class FigureController extends Controller
 
         $up = FigureDB::find($figure_id);
         $up->name = $request->input('name');
-        $up->url = $request->input('url');
+        // $up->url = $request->input('url');
+        //$up->extended = $request->input('released');
         $up->released = $request->input('released');
+        $up->scale_id = $request->input('scale_id');
+        $up->manufacturer_id = $request->input('manufacturer_id');
+        $up->productline_id = $request->input('productline_id');
+        $up->item_number = $request->input('item_number');
+        $up->group_id = $request->input('group_id');
+        $up->character_id = $request->input('character_id');
+        $up->sculptor_id = $request->input('sculptor_id');
+        $up->announce_date = $request->input('announce_date');
+        $up->seen_date = $request->input('seen_date');
+        $up->available_date = $request->input('available_date');
+        $up->available_release_date = $request->input('available_release_date');
+        $up->release_date = $request->input('release_date');
+        $up->price = $request->input('price');
+        //$up->height = $request->input('height');
+        $up->url = $request->input('url');
+        //$up->amazon = $request->input('amazon');
+        //$up->description = $request->input('description');
+        $up->manufacturer_url = $request->input('manufacturer_url');
+        //$up->amiami_id = $request->input('amiami_id');
+        //$up->mandarake_id = $request->input('mandarake_id');      
         $up->updated_by = Auth::id();  
         $up->save();
 

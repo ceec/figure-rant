@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Group extends Model
+class Scale extends Model
 {
-    protected $table = 'figures.groups';
+    protected $table = 'figures.scales';
 }
