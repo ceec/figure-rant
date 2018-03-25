@@ -9,7 +9,7 @@
     <div class="row">
     	<div class="col-md-12">
       @foreach($figures as $figure)
-        @if ($figure->released == 1)
+        @if ($figure->item_number != '')
             <a href="/home/figure/edit/{{$figure->id}}">{{$figure->item_number}} - {{ $figure->name }}</a><br>
         @else
             <a href="/home/figure/edit/{{$figure->id}}">{{ $figure->name }}</a><br>
