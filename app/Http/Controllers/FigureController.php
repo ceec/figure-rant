@@ -154,11 +154,39 @@ class FigureController extends Controller
         $up->group_id = $request->input('group_id');
         $up->character_id = $request->input('character_id');
         $up->sculptor_id = $request->input('sculptor_id');
-        $up->announce_date = $request->input('announce_date');
-        $up->seen_date = $request->input('seen_date');
-        $up->available_date = $request->input('available_date');
-        $up->available_release_date = $request->input('available_release_date');
-        $up->release_date = $request->input('release_date');
+
+        //check for empty dates
+        $announce_date = $request->input('announce_date');
+        $seen_date = $request->input('seen_date');
+        $available_date = $request->input('available_date');
+        $available_release_date = $request->input('available_release_date');
+        $release_date = $request->input('release_date');
+
+        if ($announce_date == '') {
+            $announce_date = '2000-1-01';
+        }
+
+        if ($seen_date == '') {
+            $seen_date = '2000-1-01';
+        }
+
+        if ($available_date == '') {
+            $available_date = '2000-1-01';
+        }
+
+        if ($available_release_date == '') {
+            $available_release_date = '2000-1-01';
+        }
+
+        if ($release_date == '') {
+            $release_date = '2000-1-01';
+        }        
+        
+        $up->announce_date = $announce_date;
+        $up->seen_date = $seen_date;
+        $up->available_date = $available_date;
+        $up->available_release_date = $available_release_date;
+        $up->release_date = $release_date;
         $up->price = $request->input('price');
         //$up->height = $request->input('height');
         $up->url = $request->input('url');
