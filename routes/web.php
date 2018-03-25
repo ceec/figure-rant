@@ -129,6 +129,34 @@ Route::get('/home/figure/list','FigureController@listDisplay');
 Route::post('/add/figure','FigureController@add');
 Route::post('/edit/figure','FigureController@edit');
 
+
+///add edit categories
+//groups
+Route::get('/home/group/add','GroupController@addDisplay');
+Route::get('/home/group/edit/{group_id}','GroupController@editDisplay');
+Route::get('/home/group/list','GroupController@listDisplay');
+//posting
+Route::post('/add/group','GroupController@add');
+Route::post('/edit/group','GroupController@edit');
+
+//characters
+Route::get('/home/character/add','CharacterController@addDisplay');
+Route::get('/home/character/edit/{character_id}','CharacterController@editDisplay');
+Route::get('/home/character/list','CharacterController@listDisplay');
+//posting
+Route::post('/add/character','CharacterController@add');
+Route::post('/edit/character','CharacterController@edit');
+
+//sculptors
+Route::get('/home/sculptor/add','SculptorController@addDisplay');
+Route::get('/home/sculptor/edit/{sculptor_id}','SculptorController@editDisplay');
+Route::get('/home/sculptor/list','SculptorController@listDisplay');
+//posting
+Route::post('/add/sculptor','SculptorController@add');
+Route::post('/edit/sculptor','SculptorController@edit');
+
+
+
 ////meessssing around
 
 Route::get('/tool/addnendos','FiguredbController@addNendos');

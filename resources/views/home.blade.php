@@ -21,6 +21,23 @@
                         <a href="/home/figure/list">Edit Figure</a><br>
                     </div>                                      
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>Groups</h3>
+                        <a href="/home/group/add">Add New Group</a><br>
+                        <a href="/home/group/list">Edit Group</a><br>                        
+                    </div>
+                    <div class="col-md-3">
+                        <h3>Characters</h3>
+                        <a href="/home/character/add">Add New Character</a><br>
+                        <a href="/home/character/list">Edit Character</a><br>                        
+                    </div>   
+                    <div class="col-md-3">
+                        <h3>Sculptors</h3>
+                        <a href="/home/sculptor/add">Add New Sculptor</a><br>
+                        <a href="/home/sculptor/list">Edit Sculptor</a><br>                        
+                    </div>                                        
+                </div>
 
                 </div>
             </div>
