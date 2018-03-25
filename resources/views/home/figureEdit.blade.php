@@ -4,10 +4,13 @@
 <div class="container">
 
     <h1>Editing {{$figure->name}}</h1>
-    
+    <h3><a href="/home/figure/list">Edit List</a></h3>
 
     <div class="row">
-    	<div class="col-md-12">
+        <div class="col-md-3">
+            <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
+        </div>    
+    	<div class="col-md-9">
 			{!! Form::open(['url' => '/edit/figure']) !!}
             <div class="form-group">
               <label for="name">Name</label>
@@ -24,8 +27,8 @@
             {!! Form::hidden('figure_id',$figure->id) !!}                                                                       
             {!! Form::submit('Edit') !!}
             {!! Form::close() !!}
-			
     	</div>
+
    	</div>
 </div>
 

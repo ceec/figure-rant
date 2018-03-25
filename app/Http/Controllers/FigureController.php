@@ -120,7 +120,7 @@ class FigureController extends Controller
         $up->save();
 
 
-        return redirect('/home');          
+        return redirect('/home/figure/edit/'.$figure_id);          
     } 
 
 
