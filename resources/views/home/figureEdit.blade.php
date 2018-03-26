@@ -122,5 +122,24 @@
    	</div>
 </div>
 
+<script type="text/javascript">
+    //paste something into textbox
+//https://stackoverflow.com/questions/6035071/intercept-paste-event-in-javascript
+var input = document.getElementById('url');
+input.onpaste = function(e) {
+	var pastedText;
+	if (e.clipboardData && e.clipboardData.getData) {
+    pastedText = e.clipboardData.getData('text/plain');
 
+		//need to convert to lowercase
+		pastedText = pastedText.toLowerCase();
+		//replace spaces with - 
+		pastedText = pastedText.replace(/ /g,"-");
+		//need to update the input value
+        document.getElementById('url').value = pastedText;
+        //this clears out the default paste function
+        return false;
+  }
+}
+</script>
 @endsection
