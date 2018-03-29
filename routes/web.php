@@ -21,6 +21,9 @@ Route::get('/order/{order_id}', 'DisplayController@order');
 Route::get('/figures', 'DisplayController@figures');
 Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
+//figureDB
+Route::get('/figure/{figure}','DisplayController@figure');
+
 Route::get('/rants', 'DisplayController@rants');
 Route::get('/reviews', 'DisplayController@reviews');
 Route::get('/news', 'DisplayController@news');
@@ -45,6 +48,7 @@ Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTrackerOld');
 //nendotracker - new version 2018-03-24
 Route::get('/nendoroid-tracker', 'DisplayController@nendoroidTracker');
 
+//front database for well figures? already have a /figures what is it  lets use it
 
 //daata
 Route::get('/graphs', 'DisplayController@graphs');

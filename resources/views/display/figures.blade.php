@@ -1,45 +1,31 @@
 @extends('layouts.layout')
 
 @section('content')
+<style>
+.figure-name {
+    margin-top: 5px;
+}
+</style>
 <div class="container">
+    <h2>Figures</h2>   
     <div class="row">
+        <!-- lets have them be four across? -->
+        <?php $count = 0; ?>
+        @foreach($figures as $figure)
+            <?php $count++; ?>
+            <div class="col-md-3">
+                <a href="/figure/{{$figure->url}}">
+                <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
+                <h4 class="figure-name">{{$figure->name}}</h4>
+                </a>
+            </div>
+            @if ($count%4 == 0)
+                </div>
+                <div class="row">
+            @endif
+        @endforeach
         <div class="col-md-10">
-            <h2>Figures</h2>    
-            <table class="table">
-                <thead>
-                    <tr>
-                        <td>Name</td>
-                        <td>Manufacturer</td>
-                        <td>Series</td>
-                        <td>Character</td>
-                        <td>Order</td>
-                    </tr>
-                </thead>
-                @foreach($figures as $figure)
-                    <tr>
-                        <td>
-                            {{$figure->name}}
-                        </td>
-                        <td>
-                            {{$figure->manufacturer_id}}
-                        </td>
-                        <td>
-                            {{$figure->group_id}}
-                        </td>  
-                        <td>
-                            {{$figure->character_id}}
-                        </td>        
-                        <td>
-                            {{$figure->order_id}}
-                        </td>                                        
-                    </tr>
-                @endforeach      
-            </table>  
-        </div>
-        <div class="col-md-2">
-            <p>
-                @include('display.rightsidebar')
-            </p>
+             
         </div>
 
     </div>

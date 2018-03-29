@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Group;
 
+
 use Auth;
 
 class GroupController extends Controller {
@@ -40,6 +41,10 @@ class GroupController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function add(Request $request) {
+
+        $this->validate($request, [
+        'name' => 'unique:figures.groups',
+        ]);
 
         $n = new Group;
         $n->name = $request->input('name');

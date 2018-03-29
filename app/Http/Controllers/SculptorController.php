@@ -41,6 +41,10 @@ class SculptorController extends Controller {
      */
     public function add(Request $request) {
 
+        $this->validate($request, [
+        'name' => 'unique:figures.sculptors',
+        ]);
+
         $n = new Sculptor;
         $n->name = $request->input('name');
         $n->url = $request->input('url');
