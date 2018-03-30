@@ -4,6 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
+           
             <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
         </div>    
     	<div class="col-md-9">

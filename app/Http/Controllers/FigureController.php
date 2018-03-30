@@ -54,13 +54,13 @@ class FigureController extends Controller
         $f->name = $request->input('name');
         $f->extended = '';
         $f->released = 0;
-        $f->scale_id = 0;
-        $f->manufacturer_id = 0;
-        $f->productline_id = 0;
+        $f->scale_id = 1;
+        $f->manufacturer_id = 1;
+        $f->productline_id = 1;
         $f->item_number = '';
-        $f->group_id = 0;
-        $f->character_id = 0;
-        $f->sculptor_id = 0;
+        $f->group_id = 1;
+        $f->character_id = 1;
+        $f->sculptor_id = 1;
         $f->announce_date = '2018-01-01';
         $f->seen_date = '2018-01-01';
         $f->available_date = '2018-01-01';
@@ -115,11 +115,11 @@ class FigureController extends Controller
             $productlines = Productline::orderBy('name','ASC')->pluck('name','id');
 
             ///add the 0 Unknown placeholders
-            $collections = [$groups,$characters,$sculptors,$scales,$manufacturers,$productlines];
+           // $collections = [$groups,$characters,$sculptors,$scales,$manufacturers,$productlines];
 
-            foreach($collections as $collection) {
-                $collection->prepend('Unknown',0);
-            }
+            // foreach($collections as $collection) {
+            //     $collection->prepend('Unknown',0);
+            // }
            
             
 
