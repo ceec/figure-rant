@@ -252,19 +252,6 @@ class DisplayController extends Controller
     }
 
      /**
-     * Figures
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function figure($url) {
-
-       $figure = FigureDB::where('url','=',$url)->first();
-
-        return view('display.figure')
-          ->with('figure',$figure);
-    }
-
-     /**
      * Nendoroids
      *
      * @return \Illuminate\Http\Response

@@ -6,10 +6,65 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 use DB;
 use App\FigureDB;
+use App\Group;
 
 
 class FiguredbController extends Controller
 {
+
+     /**
+     * Figures
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function figure($url) {
+
+       $figure = FigureDB::where('url','=',$url)->first();
+
+        return view('display.figure')
+          ->with('figure',$figure);
+    }
+
+    /**
+     * Groups
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function group($url) {
+        $group_id = self::getIdFromParameter('group',$url);
+        //get the group id from the url, what did i use on enstars
+
+       $figures = FigureDB::where('group_id','=',$url)->get();
+
+        return view('display.figures')
+          ->with('figures',$figures);
+    }
+
+
+        //can pass through an id or an url
+        // if (ctype_digit($classroom_id)){
+        //     $classroom = Classroom::where('id','=',$classroom_id)->first();
+        // } else {
+        //     $classroom = Classroom::where('url','=',$classroom_id)->first();
+        // }
+
+    
+    //helper function
+    protected function getIdFromParameter($type,$parameter) {
+        //can pass through an id or an url
+        $classname = ucfirst($type);
+
+        if (ctype_digit($parameter)){
+            $result = $classname::where('id','=',$parameter)->first();
+        } else {
+            //call_user_func($classname::where('id','=',$parameter)->first());
+            //$result = $classname::where('url','=',$parameter)->first();
+            //dd($classname);
+            //$result = Group::where('url','=',$parameter)->first();
+        }
+
+        return $result;
+    }
 
 
 
