@@ -9,6 +9,24 @@ use App\FigureDB;
 use App\Group;
 
 
+//   class YourClassFactory {
+
+//         private $_language;
+//         private $_basename = 'yourclass';
+
+//         public YourClassFactory($language) {
+//             $this->_language = $language;
+//         }
+
+//         public function getYourClass() {
+//             return $this->_basename . '_' . $this->_language;
+//         }    
+//     } 
+
+
+//     $yourClass = $yourClassFactoryInstance->getYourClass();
+//     $yourClass::myFunctionName();   
+
 class FiguredbController extends Controller
 {
 
@@ -31,10 +49,14 @@ class FiguredbController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function group($url) {
-        $group_id = self::getIdFromParameter('group',$url);
+        //$group_id = self::getIdFromParameter('group',$url);
         //get the group id from the url, what did i use on enstars
 
-       $figures = FigureDB::where('group_id','=',$url)->get();
+        $type = self::checkParameter($url);
+
+        $group = Group::where($type,'=',$url)->first();
+
+       $figures = FigureDB::where('group_id','=',$group->id)->get();
 
         return view('display.figures')
           ->with('figures',$figures);
@@ -48,18 +70,34 @@ class FiguredbController extends Controller
         //     $classroom = Classroom::where('url','=',$classroom_id)->first();
         // }
 
+
+        //ok a factory?
+        //2018-04-13
+        //okay having all the issues using variables.
+        
+            protected function checkParameter($parameter) {
+                if (ctype_digit($parameter)){
+                    $type = 'id';
+                } else {
+                    $type = 'url';
+                }
+
+                return $type;
+            }
+
+
     
-    //helper function
+    //helper function, okay this was too lofty a goal
     protected function getIdFromParameter($type,$parameter) {
         //can pass through an id or an url
         $classname = ucfirst($type);
 
         if (ctype_digit($parameter)){
             $result = $classname::where('id','=',$parameter)->first();
+
         } else {
-            //call_user_func($classname::where('id','=',$parameter)->first());
-            //$result = $classname::where('url','=',$parameter)->first();
-            //dd($classname);
+            $result = $classname::where('url','=',$parameter)->first();
+            dd($classname);
             //$result = Group::where('url','=',$parameter)->first();
         }
 
