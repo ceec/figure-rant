@@ -48,6 +48,8 @@ Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTrackerOld');
 
 //nendotracker - new version 2018-03-24
 Route::get('/nendoroid-tracker', 'DisplayController@nendoroidTracker');
+//
+Route::get('/nendoroid-tracker/{type}', 'DisplayController@nendoroidTracker');
 
 //front database for well figures? already have a /figures what is it  lets use it
 

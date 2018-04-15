@@ -476,7 +476,7 @@ class DisplayController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function nendoroidTracker() {
+    public function nendoroidTracker($type ='') {
        //how many in total
        //$total = FigureController::stats();
 
@@ -484,7 +484,17 @@ class DisplayController extends Controller
        //$nendoannounce = Nendoroid::where('productline_id','=',1)->where('status_id','=',1)->get();    
        
        //get new figure db
-       $figures = FigureDB::all();
+      
+
+
+
+       if ($type == 'released') {
+         $figures = FigureDB::where('item_number','!=','')->get();
+       } else if ($type == 'announced') {
+         $figures = FigureDB::where('item_number','=','')->get();
+       } else {
+        $figures = FigureDB::all();
+       }
 
         return view('display.nendoroidTracker')
           ->with('figures',$figures);
