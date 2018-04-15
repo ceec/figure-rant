@@ -489,7 +489,7 @@ class DisplayController extends Controller
 
 
        if ($type == 'released') {
-         $figures = FigureDB::where('item_number','!=','')->get();
+         $figures = FigureDB::where('item_number','!=','')->orderBy('item_numer','asc')->get();
        } else if ($type == 'announced') {
          $figures = FigureDB::where('item_number','=','')->get();
        } else {
