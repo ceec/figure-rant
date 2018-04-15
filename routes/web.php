@@ -30,10 +30,12 @@ Route::get('/reviews', 'DisplayController@reviews');
 Route::get('/news', 'DisplayController@news');
 
 //{type}/{url}
+//should make this nicer
 Route::get('/rant/{url}', 'DisplayController@article');
 Route::get('/news/{url}', 'DisplayController@article');
 Route::get('/haul/{url}', 'DisplayController@article');
 Route::get('/review/{url}', 'DisplayController@article');
+Route::get('/event/{url}', 'DisplayController@article');
 
 //generate the rss feed
 Route::get('/createrss','DisplayController@rss');
