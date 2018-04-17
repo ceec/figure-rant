@@ -41,10 +41,19 @@ class FiguredbController extends Controller
 
        $figure = FigureDB::where('url','=',$url)->first();
 
+       //figure out the folder
+       if ($figure->productline->name == 'Nendoroid') {
+          $image_folder = 'nendoroids';
+       } else {
+          $image_folder = 'scales';
+       }
+        
+
        $figurecheck = self::figureChecK($figure->id);
 
         return view('display.figure')
-          ->with('figure',$figure)
+					->with('figure',$figure)
+					->with('image_folder',$image_folder)
           ->with('figurecheck',$figurecheck);
     }
 

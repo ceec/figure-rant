@@ -122,6 +122,12 @@ class FigureController extends Controller
             // }
            
             
+            //figure out the folder
+            if ($figure->productline->name == 'Nendoroid') {
+                $image_folder = 'nendoroids';
+            } else {
+                $image_folder = 'scales';
+            }            
 
             return view('home.figureEdit')
             ->with('groups',$groups)
@@ -130,6 +136,7 @@ class FigureController extends Controller
             ->with('scales',$scales)
             ->with('manufacturers',$manufacturers)
             ->with('productlines',$productlines)
+            ->with('image_folder',$image_folder)
             ->with('figure',$figure);
     } 
 
