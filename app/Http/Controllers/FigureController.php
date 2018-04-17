@@ -57,7 +57,7 @@ class FigureController extends Controller
         $f->scale_id = 1;
         $f->manufacturer_id = 1;
         $f->productline_id = 1;
-        $f->item_number = '';
+        $f->item_number = 0;
         $f->group_id = 1;
         $f->character_id = 1;
         $f->sculptor_id = 1;
