@@ -7,8 +7,8 @@
             <h1>Order #{{$order->id}}</h1>
 
        
-            @foreach($figures as $figure)
-                {{$figure->name}}<br>
+            @foreach($order->orderfigures as $figure)
+                <a href="/figure/{{$figure->figure->url}}">{{$figure->figure->name}}</a><br>
 
             @endforeach
 

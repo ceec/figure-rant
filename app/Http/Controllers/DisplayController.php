@@ -312,14 +312,8 @@ class DisplayController extends Controller
 
 
        $order = Order::find($order_id);
-
-       $figures = Figure::where('order_id','=',$order_id)->get();
-
-
-
         return view('display.order')
             ->with('total',$total)    
-            ->with('figures',$figures)     
             ->with('order',$order);
     }   
 
