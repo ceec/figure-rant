@@ -174,7 +174,13 @@ class FiguredbController extends Controller
      * @return bool
      */
     private function figureCheck($figure_id) {
-      $user= Auth::user();    
+			$user= Auth::user();    
+
+			if (!isset($user->id)) {
+				return false;
+			}
+
+
       $check = Orderfigure::where('user_id','=',$user->id)->where('figure_id','=',$figure_id)->count();
 
       if ($check > 0 ) {
