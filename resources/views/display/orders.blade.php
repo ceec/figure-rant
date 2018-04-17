@@ -27,7 +27,11 @@
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
                         <td>{{$order->order_date}}</td> 
-                        <td>{{$order->shipment_date}}</td> 
+                        <td>
+                            @if (($order->shipment_date != '0000-00-00') && ($order->shipment_date != '200-01-01'))
+                                {{$order->shipment_date}}
+                            @endif
+                        </td> 
                         @if ($order->store_id > 0)
                         <td>{{$order->store->name}}</td>
                         @else
