@@ -148,7 +148,8 @@ Route::post('/edit/order','OrderController@edit');
 //adding figure to user
 Route::post('/add/user/figure','OrderController@addFigure');
 //add figure to order
-Route::post('/edit/order/figure','OrderController@addOrderFigure');
+Route::post('/edit/order/figure','OrderController@editOrderFigure');
+Route::post('/remove/order/figure','OrderController@removeOrderFigure');
 
 ///add edit categories
 //groups

@@ -73,7 +73,21 @@
 
             <br><label for="name">Figures</label><br>
             @foreach($figures as $figure)
+              {!! Form::open(['url' => '/edit/order/figure']) !!}
               {{$figure->figure->name}}<br>
+              {!! Form::number('price_yen',$figure->price_yen,['class'=>'','id'=>'url']) !!}
+              {!! Form::number('price_usd',$figure->price_usd,['class'=>'','id'=>'url','step'=>'0.01']) !!}              
+              {!! Form::text('status',$figure->status,['class'=>'','id'=>'url']) !!}
+              {!! Form::submit('Edit Figure') !!}    
+              {!! Form::hidden('order_figure_id',$figure->id) !!}    
+               {!! Form::hidden('order_id',$figure->order_id) !!}                                                                           
+              {!! Form::close() !!}   
+
+              {!! Form::open(['url' => '/remove/order/figure']) !!}
+              {!! Form::submit('X') !!}    
+              {!! Form::hidden('order_figure_id',$figure->id) !!}   
+              {!! Form::hidden('order_id',$figure->order_id) !!}                                                                     
+              {!! Form::close() !!}                 
             @endforeach
             <!-- Need to display figures that are already attached
             Have nice UI to add more -->

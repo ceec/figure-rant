@@ -100,7 +100,48 @@ class OrderController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function addOrderFigure(Request $request) {
+    public function editOrderFigure(Request $request) {
+        //get the user id
+        $user = Auth::user();    
+
+        $order_figure_id = $request->input('order_figure_id');
+        $order_id = $request->input('order_id');
+
+        $price_yen = $request->input('price_yen');
+        $price_usd = $request->input('price_usd');
+        $status = $request->input('status');
+
+
+        if ($price_yen == '') {
+            $price_yen = 0;
+        }
+        if ($price_usd == '') {
+            $price_usd = 0;
+        }
+
+        if ($status == '') {
+            $status = '';
+        }        
+        
+        $up = Orderfigure::find($order_figure_id);
+        $up->order_id = $order_id;
+        $up->price_yen = $price_yen;
+        $up->price_usd = $price_usd;
+        $up->status = $status;
+        $up->updated_by = Auth::id();  
+        $up->save();        
+
+        return redirect('/home/order/edit/'.$order_id);              
+    } 
+
+
+
+      /**
+     * Add figure to order, more of an update
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function removeOrderFigure(Request $request) {
         //get the user id
         $user = Auth::user();    
 
@@ -108,12 +149,12 @@ class OrderController extends Controller {
         $order_id = $request->input('order_id');
 
         $up = Orderfigure::find($order_figure_id);
-        $up->order_id = $order_id;
+        $up->order_id = '0';
         $up->updated_by = Auth::id();  
         $up->save();        
 
         return redirect('/home/order/edit/'.$order_id);              
-    } 
+    }  
 
 
     /**
