@@ -65,4 +65,19 @@ class FigureDB extends Model
         return $this->belongsToMany('App\FigureDB','orderfigures','order_id','figure_id');
     }    
 
+    /**
+     * Get the folder type.
+     */
+    public function imageFolder()
+    {
+       if ($this->productline->name == 'Nendoroid') {
+          $image_folder = 'nendoroids';
+       } else {
+          $image_folder = 'scales';
+       }
+
+       return $image_folder;
+    }   
+
+
 }

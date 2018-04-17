@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-md-3">
            
-            <img class="img-responsive" src="/images/{{$image_folder}}/{{$figure->url}}-released.jpg">
+            <img class="img-responsive" src="/images/{{$figure->imageFolder()}}/{{$figure->url}}-released.jpg">
             @if (!Auth::guest())
 							<br>
 							@if($figurecheck)

@@ -15,7 +15,7 @@
             <?php $count++; ?>
             <div class="col-md-3">
                 <a href="/figure/{{$figure->url}}">
-                <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
+                <img class="img-responsive" src="/images/{{$figure->imageFolder()}}/{{$figure->url}}-released.jpg">
                 <h4 class="figure-name">{{$figure->name}}</h4>
                 </a>
             </div>
