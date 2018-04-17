@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 
-    <h1>Editing {{$figure->name}}</h1>
+    <h1>Editing <a href="/figure/{{$figure->url}}">{{$figure->name}}</a></h1>
     <h3><a href="/home/figure/list">Edit List</a></h3>
 
     <div class="row">
