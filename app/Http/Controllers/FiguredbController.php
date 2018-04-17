@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use DB;
 use App\FigureDB;
 use App\Group;
+use Auth;
+use App\Orderfigure;
 
 
 //   class YourClassFactory {
@@ -39,8 +41,11 @@ class FiguredbController extends Controller
 
        $figure = FigureDB::where('url','=',$url)->first();
 
+       $figurecheck = self::figureChecK($figure->id);
+
         return view('display.figure')
-          ->with('figure',$figure);
+          ->with('figure',$figure)
+          ->with('figurecheck',$figurecheck);
     }
 
     /**
@@ -152,8 +157,25 @@ class FiguredbController extends Controller
     }  
 
 
+    ///user check???
+    /////user stuff???
+    /**
+     * Check if the user has that figure
+     *
+     * @return bool
+     */
+    private function figureCheck($figure_id) {
+      $user= Auth::user();    
+      $check = Orderfigure::where('user_id','=',$user->id)->where('figure_id','=',$figure_id)->count();
 
+      if ($check > 0 ) {
+        $result = true;
+      } else {
+        $result = false;
+      }
 
+      return $result;
+    }     
 
 
 }

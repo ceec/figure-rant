@@ -10,12 +10,17 @@
                 <div class="panel-body">
 
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-3">
                         <h3>Blog</h3>
                         <a href="/home/blog/add">Add New Blog</a><br>
                         <a href="/home/blog/list">Edit Blog</a><br>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3">
+                        <h3>Orders</h3>
+                        <a href="/home/order/add">Add New Order</a><br>
+                        <a href="/home/order/list">Edit Order</a><br>                        
+                    </div>
+                    <div class="col-md-3">
                         <h3>Figures</h3>
                         <a href="/home/figure/add">Add New Figure</a><br>
                         <a href="/home/figure/list">Edit Figure</a><br>

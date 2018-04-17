@@ -55,6 +55,14 @@ class FigureDB extends Model
     public function scale()
     {
         return $this->belongsTo('App\Scale');
+    }   
+    
+    /**
+     * Get the orderfigure?.
+     */
+    public function orders()
+    {
+        return $this->belongsToMany('App\FigureDB','orderfigures','order_id','figure_id');
     }    
 
 }

@@ -220,5 +220,24 @@ class FigureController extends Controller
     }  
 
 
+    /////user stuff???
+    /**
+     * Check if the user has that figure
+     *
+     * @return bool
+     */
+    private function figureCheck($figure_id) {
+      $user= Auth::user();    
+      $check = Orderfigure::where('user_id','=',$user->id)->where('figure_id','=',$figure_id)->count();
+
+      if ($check > 0 ) {
+        $result = true;
+      } else {
+        $result = false;
+      }
+
+      return $result;
+    }     
+
 
 }

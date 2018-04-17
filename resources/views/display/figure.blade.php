@@ -6,6 +6,19 @@
         <div class="col-md-3">
            
             <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
+            @if (!Auth::guest())
+							<br>
+							@if($figurecheck)
+								Figure Added
+							@else
+								{!! Form::open(['url' => '/add/user/figure']) !!}
+								{!! Form::hidden('figure_id',$figure->id) !!}                                                                      
+								{!! Form::submit('Add') !!}
+								{!! Form::close() !!}   
+							@endif
+						
+
+            @endif
         </div>    
     	<div class="col-md-9">
         <h2>{{$figure->name}}</h2>   

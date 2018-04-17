@@ -138,6 +138,17 @@ Route::get('/home/figure/list','FigureController@listDisplay');
 Route::post('/add/figure','FigureController@add');
 Route::post('/edit/figure','FigureController@edit');
 
+///orders
+Route::get('/home/order/add','OrderController@addDisplay');
+Route::get('/home/order/edit/{order_id}','OrderController@editDisplay');
+Route::get('/home/order/list','OrderController@listDisplay');
+//posting
+Route::post('/add/order','OrderController@add');
+Route::post('/edit/order','OrderController@edit');
+//adding figure to user
+Route::post('/add/user/figure','OrderController@addFigure');
+//add figure to order
+Route::post('/edit/order/figure','OrderController@addOrderFigure');
 
 ///add edit categories
 //groups
@@ -169,4 +180,5 @@ Route::post('/edit/sculptor','SculptorController@edit');
 ////meessssing around
 
 Route::get('/tool/addnendos','FiguredbController@addNendos');
+
 
