@@ -324,14 +324,39 @@ class DisplayController extends Controller
     }   
 
 
+    /**
+     * Orders - new 2018-04-16
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function orders() {
+      //how many in total
+			$total = FigureController::stats();
+			 			
+			$orders = Order::orderBy('order_date','desc')->get();
+			//new orders!
 
+      $total_usd = Order::sum('total_usd');
+      $total_yen = Order::sum('total_yen');
+      $total_shipping_usd = Order::sum('shipping_usd');
+      $total_shipping_yen = Order::sum('shipping_yen');
+
+
+			return view('display.orders')
+			->with('total',$total) 
+			->with('total_usd',$total_usd)
+			->with('total_yen',$total_yen)  
+			->with('total_shipping_usd',$total_shipping_usd)     
+			->with('total_shipping_yen',$total_shipping_yen)
+			->with('orders',$orders);
+		}
 
     /**
      * Orders
      *
      * @return \Illuminate\Http\Response
      */
-    public function orders() {
+    public function ordersOLD() {
 
        //how many in total
        $total = FigureController::stats();
@@ -374,7 +399,7 @@ class DisplayController extends Controller
        $total_shipping_usd = Order::sum('shipping_usd');
        $total_shipping_yen = Order::sum('shipping_yen');
 
-        return view('display.orders')
+        return view('display.ordersOLD')
             ->with('total',$total) 
             ->with('total_usd',$total_usd)
             ->with('total_yen',$total_yen)  

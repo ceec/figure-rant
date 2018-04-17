@@ -15,8 +15,12 @@
 Route::get('/', 'DisplayController@index');
 
 Route::get('/about', 'DisplayController@about');
-Route::get('/orders', 'DisplayController@orders');
+Route::get('/ordersOLD', 'DisplayController@ordersOLD');
 Route::get('/order/{order_id}', 'DisplayController@order');
+
+//new orders
+Route::get('/orders', 'DisplayController@orders');
+
 
 Route::get('/figures', 'DisplayController@figures');
 Route::get('/figures/nendoroids', 'DisplayController@nendoroids');

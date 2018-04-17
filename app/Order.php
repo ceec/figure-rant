@@ -14,6 +14,15 @@ class Order extends Model
         return $this->hasMany('App\Figure');
     }
 
+
+        /**
+     * Get the figures.
+     */
+    public function figuredbs()
+    {
+        return $this->hasMany('App\FigureDB');
+    }    
+
         /**
      * Get the store.
      */
@@ -21,6 +30,15 @@ class Order extends Model
     {
         return $this->belongsTo('App\Store');
     }
+
+
+    /**
+     * Get the figures.
+     */
+    public function orderfigures()
+    {
+        return $this->hasMany('App\Orderfigure');
+    }  
 
 
 }

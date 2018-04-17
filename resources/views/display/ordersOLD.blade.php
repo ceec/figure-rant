@@ -64,26 +64,26 @@
                         <td></td>
 
                         <td>
-                            @foreach($order->orderfigures as $figure)
+                            @foreach($order->figures as $figure)
                                 <?php 
-                                    $name = substr($figure->figure->name,0,35);
+                                    $name = substr($figure->name,0,35);
                                     //$name = $figure->name;
                                 ?>
                                 {{$name}}<br>
                             @endforeach
                         </td>
                         <td>
-                            @foreach($order->orderfigures as $figure)
+                            @foreach($order->figures as $figure)
                                 {{$figure->status}}
                                 @if($figure->status == 'Pre-order')
-                                    - {{$order->order_date}}<br>
+                                    - {{$figure->order_date}}<br>
                                 @else
                                     <br>
                                 @endif
                             @endforeach
                         </td>                        
                         <td>
-                            @foreach($order->orderfigures as $figure)
+                            @foreach($order->figures as $figure)
                                 @if($figure->price_yen != '0')
                                   {{$figure->price_yen}}
                                 @endif
@@ -91,7 +91,7 @@
                             @endforeach
                         </td>
                         <td>
-                            @foreach($order->orderfigures as $figure)
+                            @foreach($order->figures as $figure)
                                 @if($figure->price_usd != '0')
                                 ${{$figure->price_usd}}
                                 @endif
