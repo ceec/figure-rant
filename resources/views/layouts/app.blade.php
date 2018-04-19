@@ -19,6 +19,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
+    <script src="/js/figure.js"></script>
 </head>
 <body>
     <div id="app">
@@ -86,5 +87,6 @@
 
     <!-- Scripts -->
     <script src="/js/app.js"></script>
+     <script src="/js/admin.js"></script>
 </body>
 </html>
