@@ -16,7 +16,7 @@ var figure = (function () {
         pastedText = pastedText.replace(/:/g, "");
 
         //need to update the input value
-        document.getElementById('url').value = pastedText;
+        input.value = pastedText;
         //this clears out the default paste function
         return false;
       }
