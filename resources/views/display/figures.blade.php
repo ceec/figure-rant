@@ -1,5 +1,10 @@
 @extends('layouts.layout')
 
+@section('title')
+@parent
+Figures - figurerant.com
+@stop
+
 @section('content')
 <style>
 .figure-name {

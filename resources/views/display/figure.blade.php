@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 
+@section('title')
+@parent
+{{$figure->name}} - figurerant.com
+@stop
+
+
 @section('content')
 <div class="container">
     <div class="row">

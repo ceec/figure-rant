@@ -1,5 +1,10 @@
 @extends('layouts.layout')
 
+@section('title')
+@parent
+Order #{{$order->id}} - figurerant.com
+@stop
+
 @section('content')
 <div class="container">
     <div class="row">
