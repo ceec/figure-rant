@@ -9,6 +9,7 @@ use App\FigureDB;
 use App\Group;
 use Auth;
 use App\Orderfigure;
+use App\Character;
 
 
 //   class YourClassFactory {
@@ -47,7 +48,39 @@ class FiguredbController extends Controller
         return view('display.figure')
 					->with('figure',$figure)
           ->with('figurecheck',$figurecheck);
+		}
+		
+
+
+    /**
+     * Display figure category
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function displayCategory($category,$url) {
+			//category will be character/group/sculptor
+        //$group_id = self::getIdFromParameter('group',$url);
+				//get the group id from the url, what did i use on enstars
+				$original_category = $category;
+
+				$type = self::checkParameter($url);
+
+				$category = ucfirst($category);
+
+				$category = '\App\\'.$category;		
+				$group = $category::where($type,'=',$url)->first();
+
+        //$group = Group::where($type,'=',$url)->first();
+
+       $figures = FigureDB::where($original_category.'_id','=',$group->id)->get();
+
+        return view('display.figures')
+          ->with('figures',$figures);
     }
+
+
+
+
 
     /**
      * Groups
@@ -67,6 +100,32 @@ class FiguredbController extends Controller
         return view('display.figures')
           ->with('figures',$figures);
     }
+
+
+    /**
+     * Groups
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function character($url) {
+        //$group_id = self::getIdFromParameter('group',$url);
+        //get the group id from the url, what did i use on enstars
+
+				$type = self::checkParameter($url);
+				
+				$model = 'Character';
+
+				$model = new Character;
+				$group = $model->where($type,'=',$url)->first();
+
+        //$group = $model::where($type,'=',$url)->first();
+
+       $figures = FigureDB::where('character_id','=',$group->id)->get();
+
+        return view('display.figures')
+          ->with('figures',$figures);
+    }
+
 
 
         //can pass through an id or an url

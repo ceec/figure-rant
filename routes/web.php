@@ -27,7 +27,13 @@ Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
 //figureDB
 Route::get('/figure/{figure}','FiguredbController@figure');
-Route::get('/group/{group}','FiguredbController@group');
+Route::get('/{category}/{url}','FiguredbController@displayCategory');
+// Route::get('/group/{group}','FiguredbController@group');
+// Route::get('/manufacturer/{manufacturer}','FiguredbController@manufacturer');
+// Route::get('/character/{character}','FiguredbController@character');
+// Route::get('/product-line/{product_line}','FiguredbController@group');
+// Route::get('/sculptor/{sculptor}','FiguredbController@group');
+// Route::get('/scale/{scale}','FiguredbController@group');
 
 Route::get('/rants', 'DisplayController@rants');
 Route::get('/reviews', 'DisplayController@reviews');
