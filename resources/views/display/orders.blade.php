@@ -122,8 +122,8 @@ Orders - figurerant.com
                         <td></td>
                         <td>{{$preorder_total_yen}}</td>
                         <td>${{$preorder_total_usd}}</td>
-                        <td></td>
-                        <td></td>    
+                        <td>{{$preorder_total_shipping_yen}}</td>
+                        <td>${{$preorder_total_shipping_usd}}</td>      
                         <td></td>                    
                     </tr>
                 </tfoot>
