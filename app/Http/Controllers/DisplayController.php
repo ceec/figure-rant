@@ -327,8 +327,9 @@ class DisplayController extends Controller
       //how many in total
 			$total = FigureController::stats();
 			 			
-			$orders = Order::orderBy('order_date','desc')->get();
-			//new orders!
+			$orders = Order::where('shipment_date','>','2010-01-01')->orderBy('order_date','desc')->get();
+      //new orders!
+      $preorders = Order::where('shipment_date','<','2010-01-01')->orderBy('order_date','desc')->get();
 
       $total_usd = Order::sum('total_usd');
       $total_yen = Order::sum('total_yen');
@@ -342,7 +343,8 @@ class DisplayController extends Controller
 			->with('total_yen',$total_yen)  
 			->with('total_shipping_usd',$total_shipping_usd)     
 			->with('total_shipping_yen',$total_shipping_yen)
-			->with('orders',$orders);
+      ->with('orders',$orders)
+      ->with('preorders',$preorders);
 		}
 
     /**
