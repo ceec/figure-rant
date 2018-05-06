@@ -339,8 +339,8 @@ class DisplayController extends Controller
 
       $preorder_total_usd = Order::where('shipment_date','<','2010-01-01')->sum('total_usd');
       $preorder_total_yen = Order::where('shipment_date','<','2010-01-01')->sum('total_yen');
-      $preorder_total_shipping_usd = Order::where('shipment_date','>','2010-01-01')->sum('shipping_usd');
-      $preorder_total_shipping_yen = Order::where('shipment_date','>','2010-01-01')->sum('shipping_yen');
+      $preorder_total_shipping_usd = Order::where('shipment_date','<','2010-01-01')->sum('shipping_usd');
+      $preorder_total_shipping_yen = Order::where('shipment_date','<','2010-01-01')->sum('shipping_yen');
 
 			return view('display.orders')
 			->with('total',$total) 
