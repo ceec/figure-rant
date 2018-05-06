@@ -120,10 +120,10 @@ Orders - figurerant.com
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td>{{$total_yen}}</td>
-                        <td>${{$total_usd}}</td>
-                        <td>{{$total_shipping_yen}}</td>
-                        <td>${{$total_shipping_usd}}</td>    
+                        <td>{{$preorder_total_yen}}</td>
+                        <td>${{$preorder_total_usd}}</td>
+                        <td></td>
+                        <td></td>    
                         <td></td>                    
                     </tr>
                 </tfoot>
