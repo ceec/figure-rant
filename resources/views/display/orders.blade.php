@@ -31,8 +31,8 @@ Orders - figurerant.com
                 @foreach($orders as $order)
                     <tr>
                         <td><a href="{{ url('/order/'.$order->id) }}">{{$order->id}}</a></td>
-                        <td>{{$order->order_date}}</td> 
-                        <td>
+                        <td style="white-space: nowrap">{{$order->order_date}}</td> 
+                        <td style="white-space: nowrap">
                             @if (($order->shipment_date != '0000-00-00') && ($order->shipment_date != '2000-01-01'))
                                 {{$order->shipment_date}}
                             @endif
@@ -69,7 +69,7 @@ Orders - figurerant.com
                     <tr>
                         <td></td>
                         <td></td>
-                        <td></td>
+                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{$order->tracking_number}}</a></td>
                         <td></td>
 
                         <td>
@@ -81,7 +81,7 @@ Orders - figurerant.com
                                 {{$name}}<br>
                             @endforeach
                         </td>
-                        <td>
+                        <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
                                 {{$figure->status}}
                                 @if($figure->status == 'Pre-order')

@@ -50,7 +50,11 @@
             <div class="form-group">
               <label for="url">Shipment Type</label>
                {!! Form::text('shipment_type',$order->shipment_type,['class'=>'form-control','id'=>'url']) !!}
-            </div>               
+            </div>   
+            <div class="form-group">
+              <label for="url">Tracking Number</label>
+               {!! Form::text('tracking_number',$order->tracking_number,['class'=>'form-control','id'=>'url']) !!}
+            </div>                           
             <div class="form-group">
               <label for="url">Arrival Date</label>
                {!! Form::date('arrival_date',$order->arrival_date,['class'=>'form-control','id'=>'url']) !!}

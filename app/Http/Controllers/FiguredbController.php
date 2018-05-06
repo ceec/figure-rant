@@ -67,6 +67,7 @@ class FiguredbController extends Controller
 
 				$category = ucfirst($category);
 
+				//https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
 				$category = '\App\\'.$category;		
 				$group = $category::where($type,'=',$url)->first();
 

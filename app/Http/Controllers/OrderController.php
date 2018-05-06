@@ -59,6 +59,7 @@ class OrderController extends Controller {
         $n->payment_date = '2000-01-01';
         $n->shipment_date = '2000-01-01';
         $n->shipment_type = '';
+        $n->tracking_number = '';
         $n->arrival_date = '2000-01-01';
         $n->updated_by = Auth::id();  
         $n->save();
@@ -211,6 +212,7 @@ class OrderController extends Controller {
         $up->payment_date = $request->input('payment_date');
         $up->shipment_date = $request->input('shipment_date');
         $up->shipment_type = $request->input('shipment_type');
+        $up->tracking_number = $request->input('tracking_number');
         $up->arrival_date = $request->input('arrival_date');
         $up->updated_by = Auth::id();  
         $up->save();
