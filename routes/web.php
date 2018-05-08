@@ -27,7 +27,7 @@ Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
 //figureDB
 Route::get('/figure/{figure}','FiguredbController@figure');
-Route::get('/{category}/{url}','FiguredbController@displayCategory');
+
 // Route::get('/group/{group}','FiguredbController@group');
 // Route::get('/manufacturer/{manufacturer}','FiguredbController@manufacturer');
 // Route::get('/character/{character}','FiguredbController@character');
@@ -39,6 +39,8 @@ Route::get('/rants', 'DisplayController@rants');
 Route::get('/reviews', 'DisplayController@reviews');
 Route::get('/news', 'DisplayController@news');
 
+
+
 //{type}/{url}
 //should make this nicer
 Route::get('/rant/{url}', 'DisplayController@article');
@@ -46,6 +48,9 @@ Route::get('/news/{url}', 'DisplayController@article');
 Route::get('/haul/{url}', 'DisplayController@article');
 Route::get('/review/{url}', 'DisplayController@article');
 Route::get('/event/{url}', 'DisplayController@article');
+
+//lul not having this under the above breaks it
+Route::get('/{category}/{url}','FiguredbController@displayCategory');
 
 //generate the rss feed
 Route::get('/createrss','DisplayController@rss');

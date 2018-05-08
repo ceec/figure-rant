@@ -10,6 +10,7 @@ use App\Group;
 use Auth;
 use App\Orderfigure;
 use App\Character;
+use App\Event;
 
 
 //   class YourClassFactory {
