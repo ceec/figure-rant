@@ -39,8 +39,6 @@ Route::get('/rants', 'DisplayController@rants');
 Route::get('/reviews', 'DisplayController@reviews');
 Route::get('/news', 'DisplayController@news');
 
-
-
 //{type}/{url}
 //should make this nicer
 Route::get('/rant/{url}', 'DisplayController@article');
@@ -51,7 +49,6 @@ Route::get('/event/{url}', 'DisplayController@article');
 
 //adding in nendo tracker 2018-05-28
 Route::get('/nendoroid-tracker/{type}', 'DisplayController@nendoroidTracker');
-
 
 //lul not having this under the above breaks it
 Route::get('/{category}/{url}','FiguredbController@displayCategory');
@@ -69,10 +66,6 @@ Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTrackerOld');
 
 //nendotracker - new version 2018-03-24
 Route::get('/nendoroid-tracker', 'DisplayController@nendoroidTracker');
-//
-
-
-//front database for well figures? already have a /figures what is it  lets use it
 
 //daata
 Route::get('/graphs', 'DisplayController@graphs');
