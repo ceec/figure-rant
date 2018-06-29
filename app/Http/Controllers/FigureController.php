@@ -108,7 +108,16 @@ class FigureController extends Controller
 
             //need to pull lists for everything!
             $groups = Group::orderBy('name','ASC')->pluck('name','id');
-            $characters = Character::orderBy('name','ASC')->pluck('name','id');
+
+            //if the character has a group set, get characters from that group
+            //otherwise all of them
+            if($figure->group_id != 1){
+                $characters = Character::where('group_id','=',$figure->group_id)->orderBy('name','ASC')->pluck('name','id');
+            } else {
+                $characters = Character::orderBy('name','ASC')->pluck('name','id');
+            }
+
+            
             $sculptors = Sculptor::orderBy('name','ASC')->pluck('name','id');
             $scales = Scale::orderBy('name','ASC')->pluck('name','id');
             $manufacturers = Manufacturer::orderBy('name','ASC')->pluck('name','id');
