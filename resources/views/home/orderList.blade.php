@@ -15,6 +15,7 @@
                 <th>Store</th>
                 <th>Order ID</th>
                 <th>Order Date</th>
+                <th>Ship Date</th>
                 <th>Figures</th>
             </tr>
         </thead>
@@ -31,9 +32,12 @@
             <td>
                 <a href="/home/order/edit/{{$order->id}}">{{ $order->store_order_id }}</a>
             </td>
-            <td>
+            <td nowrap>
                 {{ $order->order_date }}
             </td>
+            <td nowrap>
+                {{ $order->shipment_date }}
+            </td>            
             <td>
                                             @foreach($order->orderfigures as $figure)
                                 <?php 
