@@ -327,7 +327,7 @@ class DisplayController extends Controller
       //how many in total
 			$total = FigureController::stats();
 			 			
-			$orders = Order::where('shipment_date','>','2010-01-01')->orderBy('order_date','desc')->get();
+			$orders = Order::where('shipment_date','>','2010-01-01')->orderBy('shipment_date','desc')->get();
       //new orders!
       $preorders = Order::where('shipment_date','<','2010-01-01')->orderBy('order_date','desc')->get();
 
