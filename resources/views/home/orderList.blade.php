@@ -8,18 +8,44 @@
 
     <div class="row">
     	<div class="col-md-12">
+        <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Store</th>
+                <th>Order ID</th>
+                <th>Order Date</th>
+                <th>Figures</th>
+            </tr>
+        </thead>
       @foreach($orders as $order)
-        <a href="/home/order/edit/{{$order->id}}">
-            @if ($order->store_id != 0)
-                {{ $order->store->name }} - {{ $order->store_order_id }} - {{ $order->order_date }}
-            @else 
-                Special Event - {{ $order->store_order_id }} - {{ $order->order_date }}
-            @endif
-        
-        </a><br>
-
+        <tr>
+            <td><a href="/home/order/edit/{{$order->id}}">{{$order->id}}</a></td>
+            <td>
+                 @if ($order->store_id != 0)
+                    {{ $order->store->name }}
+                @else 
+                    Special Event - {{ $order->store_order_id }}
+                @endif           
+            </td>
+            <td>
+                <a href="/home/order/edit/{{$order->id}}">{{ $order->store_order_id }}</a>
+            </td>
+            <td>
+                {{ $order->order_date }}
+            </td>
+            <td>
+                                            @foreach($order->orderfigures as $figure)
+                                <?php 
+                                    $name = substr($figure->figure->name,0,35);
+                                    //$name = $figure->name;
+                                ?>
+                                {{$name}}<br>
+                            @endforeach
+            </td>
+        </tr>
       @endforeach
-			
+        </table>
     	</div>
    	</div>
 
