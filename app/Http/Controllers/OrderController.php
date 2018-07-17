@@ -181,7 +181,14 @@ class OrderController extends Controller {
 
             $user = Auth::user(); 
 
+            //right now its just the figure
             $newfigures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',0)->pluck('figure_id','id');
+            
+            foreach($newfigures as $key => $figure) {
+                //get the figure name-> this can probably be a join
+                $figure_name = FigureDB::find($figure);
+                $newfigures[$key] = $figure." - ".$figure_name->name;
+            }
 
             $figures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',$order_id)->get();
 
