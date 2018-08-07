@@ -56,7 +56,7 @@ class BlogController extends Controller {
 
         $b = new Blog;
         $b->active = 0;
-        $b->type = 'news';
+        $b->type = $request->input('type');
         $b->keywords = '';
         $b->title = $request->input('title');
         $b->content = $request->input('content');
@@ -107,6 +107,7 @@ class BlogController extends Controller {
 
         $up = Blog::find($blog_id);
         $up->active = $request->input('active');
+        $up->type = $request->input('type');
         $up->title = $request->input('title');
         $up->content = $request->input('content');
         $up->image = $request->input('image');
@@ -114,8 +115,7 @@ class BlogController extends Controller {
         $up->updated_by = Auth::id();  
         $up->save();
 
-
-        return redirect('/home');          
+        return redirect('/home/blog/edit/'.$blog_id);                  
     } 
 
 
