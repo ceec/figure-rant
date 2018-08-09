@@ -27,6 +27,7 @@ Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
 //figureDB
 Route::get('/figure/{figure}','FiguredbController@figure');
+Route::get('/roundup/{group}','FiguredbController@roundup');
 
 // Route::get('/group/{group}','FiguredbController@group');
 // Route::get('/manufacturer/{manufacturer}','FiguredbController@manufacturer');

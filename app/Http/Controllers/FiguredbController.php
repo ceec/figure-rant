@@ -246,4 +246,23 @@ class FiguredbController extends Controller
     }     
 
 
+    ///2018-08-09 figure round up
+    /**
+     * Groups
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function roundup($group_url) {
+        //get all the figures for that group.
+
+        $group = Group::where('url','=',$group_url)->first();
+        $characters = Character::where('group_id','=',$group->id)->get();
+
+        $figures = Figuredb::where('group_id','=',$group->id)->get();
+
+        return view('display.roundup')
+          ->with('characters',$characters)
+          ->with('figures',$figures);
+    }    
+
 }
