@@ -66,8 +66,8 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="released">Released</label>
-                                {!! Form::select('released',[0,1],$figure->released,['class'=>'form-control', 'id'=>'released']) !!} 
+                                <label for="released">Status</label>
+                                {!! Form::select('status_id',$status,$figure->status_id,['class'=>'form-control', 'id'=>'released']) !!} 
                             </div>  
                             <div class="form-group">
                                 <label for="group_id">Group</label>

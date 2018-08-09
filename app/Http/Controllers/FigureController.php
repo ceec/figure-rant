@@ -14,6 +14,7 @@ use App\Productline;
 use App\Sculptor;
 use App\Manufacturer;
 use App\Scale;
+use App\Status;
 
 use Auth;
 
@@ -53,6 +54,7 @@ class FigureController extends Controller
         $f = new FigureDB;
         $f->name = $request->input('name');
         $f->extended = '';
+        $f->status_id = 1;
         $f->released = 0;
         $f->scale_id = 1;
         $f->manufacturer_id = 1;
@@ -122,6 +124,7 @@ class FigureController extends Controller
             $scales = Scale::orderBy('name','ASC')->pluck('name','id');
             $manufacturers = Manufacturer::orderBy('name','ASC')->pluck('name','id');
             $productlines = Productline::orderBy('name','ASC')->pluck('name','id');
+            $status = Status::pluck('name','id');
 
             ///add the 0 Unknown placeholders
            // $collections = [$groups,$characters,$sculptors,$scales,$manufacturers,$productlines];
@@ -139,6 +142,7 @@ class FigureController extends Controller
             }            
 
             return view('home.figureEdit')
+            ->with('status',$status)
             ->with('groups',$groups)
             ->with('characters',$characters)
             ->with('sculptors',$sculptors)
@@ -162,7 +166,7 @@ class FigureController extends Controller
         $up->name = $request->input('name');
         // $up->url = $request->input('url');
         //$up->extended = $request->input('released');
-        $up->released = $request->input('released');
+        $up->status_id = $request->input('status_id');
         $up->scale_id = $request->input('scale_id');
         $up->manufacturer_id = $request->input('manufacturer_id');
         $up->productline_id = $request->input('productline_id');
