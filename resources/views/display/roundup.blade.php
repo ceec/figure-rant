@@ -27,7 +27,7 @@ Figures - figurerant.com
               <td>{{$character->name}}</td>
               @foreach($character->figures as $figure)
                 <td>
-                  <img class="figure-table" src="/images/{{$figure->imageFolder()}}/{{$figure->url}}-released.jpg">
+                  <img class="figure-table" src="/images/{{$figure->imageFolder()}}/{{$figure->url}}-{{strtolower($figure->status->name)}}.jpg">
                 </td>
               @endforeach
           </tr>
