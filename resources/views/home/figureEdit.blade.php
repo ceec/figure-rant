@@ -8,7 +8,7 @@
 
     <div class="row">
         <div class="col-md-3">
-            <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-released.jpg">
+            <img class="img-responsive" src="/images/nendoroids/{{$figure->url}}-{{strtolower($figure->status->name)}}.jpg">
         </div>    
     	<div class="col-md-9">
             {!! Form::open(['url' => '/edit/figure']) !!}

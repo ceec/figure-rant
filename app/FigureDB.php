@@ -80,4 +80,12 @@ class FigureDB extends Model
     }   
 
 
+    /**
+     * Get the status.
+     */
+    public function status()
+    {
+        return $this->belongsTo('App\Status');
+    }
+
 }
