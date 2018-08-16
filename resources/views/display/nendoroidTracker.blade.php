@@ -21,7 +21,7 @@
                         <h4>{{$nendo->item_number}}</h4>
                     <p>
                         Release Date: {{date('F Y',strtotime($nendo->available_release_date))}}<br>
-                        <a target="_blank" href="{{$nendo->gsc_url}}">GSC Link</a><br>
+                        <a target="_blank" href="{{$nendo->manufacturer_url}}">GSC Link</a><br>
                         <a target="_blank" href="http://www.amiami.com/top/detail/detail?gcode={{$nendo->amiami_id}}">AmiAmi Link</a>
                     </p>                        
                     @endif
