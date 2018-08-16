@@ -17,12 +17,14 @@
                 ?>
                 <div class="col-md-3">
                     <h3>{{$nendo->name}}</h3>
-                    <h4>{{$nendo->item_number}}</h4>
+                    @if ($nendo->item_number != 0 )
+                        <h4>{{$nendo->item_number}}</h4>
                     <p>
-                        Release Date: {{$nendo->available_release_date}}<br>
+                        Release Date: {{date('F Y',strtotime($nendo->available_release_date))}}<br>
                         <a target="_blank" href="{{$nendo->gsc_url}}">GSC Link</a><br>
                         <a target="_blank" href="http://www.amiami.com/top/detail/detail?gcode={{$nendo->amiami_id}}">AmiAmi Link</a>
-                    </p>
+                    </p>                        
+                    @endif
                 </div>
                 <div class="col-md-3">
                     @if (file_exists(public_path('/images/nendoroids/'.$folder.'-concept.jpg')))
