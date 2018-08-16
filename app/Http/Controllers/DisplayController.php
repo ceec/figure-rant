@@ -519,11 +519,11 @@ class DisplayController extends Controller
 
 
        if ($type == 'released') {
-         $figures = FigureDB::where('item_number','!=','')->orderBy('item_number','asc')->get();
+         $figures = FigureDB::where('productline_id','=',7)->where('item_number','!=','')->orderBy('item_number','asc')->get();
        } else if ($type == 'announced') {
-         $figures = FigureDB::where('item_number','=','0')->get();
+         $figures = FigureDB::where('productline_id','=',7)->where('item_number','=','0')->get();
        } else {
-        $figures = FigureDB::all();
+        $figures = FigureDB::where('productline_id','=',7)->get();
        }
 
         return view('display.nendoroidTracker')
