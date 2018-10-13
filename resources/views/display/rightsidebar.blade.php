@@ -1,22 +1,3 @@
-<h3>Figure History</h3>
-<p>2018-01-10<br>
-<strong>Pre-order</strong>
-<br>Nendoroid Lotte
-<br>Nendoroid Kiragiri
-<br>Nendoroid Hizamaru
-<br>Nendoroid Coat One</p>
-<h4>Owned: {{$total['total']}}</h4>
-
-<h4>Pre-ordered: {{$total['preorders']}}</h4>
-
-<h4>Nendoroids: {{$total['nendos']}}</h4>
-
-<h4>Sayakas: {{$total['sayakas']}}</h4>
-
-<h4>Choppers: {{$total['choppers']}}</h4>
-<!--<h4>One Piece: 34/79</h4>-->
-<!--<h3>Price Info</h3>
-<h4><a href="http://www.figureprices.com/">Figureprices</a></h4>-->
 <h3>Where To Buy</h3>
 <h4>Japan</h4>
 <h4><a href="http://amiami.com">Amiami</a></h4>
