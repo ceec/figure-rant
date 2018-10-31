@@ -32,6 +32,10 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+
+        //mail the error
+         mail('cc@battab.com','Figure Rant Error', $exception);
+
         parent::report($exception);
     }
 
