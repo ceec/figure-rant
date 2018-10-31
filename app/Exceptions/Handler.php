@@ -34,7 +34,7 @@ class Handler extends ExceptionHandler
     {
 
         //mail the error
-         mail('cc@battab.com','Figure Rant Error', $exception);
+        // mail('cc@battab.com','Figure Rant Error', $exception);
 
         parent::report($exception);
     }
