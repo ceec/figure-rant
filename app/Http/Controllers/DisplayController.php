@@ -327,16 +327,16 @@ class DisplayController extends Controller
       //how many in total
 			$total = FigureController::stats();
 			 			
-			$orders = Order::where('shipment_date','>','2010-01-01')->orderBy('shipment_date','desc')->get();
+			$orders = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->orderBy('shipment_date','desc')->get();
       //new orders!
       $preorders = Order::where('shipment_date','<','2010-01-01')->orderBy('order_date','desc')->get();
       //shipped orders
       $shippedorders = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->orderBy('order_date','desc')->get();
 
-      $total_usd = Order::where('shipment_date','>','2010-01-01')->sum('total_usd');
-      $total_yen = Order::where('shipment_date','>','2010-01-01')->sum('total_yen');
-      $total_shipping_usd = Order::where('shipment_date','>','2010-01-01')->sum('shipping_usd');
-      $total_shipping_yen = Order::where('shipment_date','>','2010-01-01')->sum('shipping_yen');
+      $total_usd = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_usd');
+      $total_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_yen');
+      $total_shipping_usd = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_usd');
+      $total_shipping_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_yen');
 
 
       $preorder_total_usd = Order::where('shipment_date','<','2010-01-01')->sum('total_usd');
