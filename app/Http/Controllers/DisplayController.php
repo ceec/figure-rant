@@ -330,6 +330,8 @@ class DisplayController extends Controller
 			$orders = Order::where('shipment_date','>','2010-01-01')->orderBy('shipment_date','desc')->get();
       //new orders!
       $preorders = Order::where('shipment_date','<','2010-01-01')->orderBy('order_date','desc')->get();
+      //shipped orders
+      $shippedorders = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->orderBy('order_date','desc')->get();
 
       $total_usd = Order::where('shipment_date','>','2010-01-01')->sum('total_usd');
       $total_yen = Order::where('shipment_date','>','2010-01-01')->sum('total_yen');
@@ -342,18 +344,29 @@ class DisplayController extends Controller
       $preorder_total_shipping_usd = Order::where('shipment_date','<','2010-01-01')->sum('shipping_usd');
       $preorder_total_shipping_yen = Order::where('shipment_date','<','2010-01-01')->sum('shipping_yen');
 
+      $shipped_total_usd = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_usd');
+      $shipped_total_yen = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_yen');
+      $shipped_total_shipping_usd = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_usd');
+      $shipped_total_shipping_yen = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_yen');
+
+
 			return view('display.orders')
 			->with('total',$total) 
 			->with('total_usd',$total_usd)
       ->with('total_yen',$total_yen)  
       ->with('preorder_total_usd',$preorder_total_usd)
-			->with('preorder_total_yen',$preorder_total_yen)  
+      ->with('preorder_total_yen',$preorder_total_yen)  
+      ->with('shipped_total_usd',$shipped_total_usd)
+      ->with('shipped_total_yen',$shipped_total_yen)       
 			->with('total_shipping_usd',$total_shipping_usd)     
       ->with('total_shipping_yen',$total_shipping_yen)
 			->with('preorder_total_shipping_usd',$preorder_total_shipping_usd)     
-			->with('preorder_total_shipping_yen',$preorder_total_shipping_yen)      
+      ->with('preorder_total_shipping_yen',$preorder_total_shipping_yen)     
+			->with('shipped_total_shipping_usd',$shipped_total_shipping_usd)     
+			->with('shipped_total_shipping_yen',$shipped_total_shipping_yen)            
       ->with('orders',$orders)
-      ->with('preorders',$preorders);
+      ->with('preorders',$preorders)
+      ->with('shippedorders',$shippedorders);
 		}
 
     /**
