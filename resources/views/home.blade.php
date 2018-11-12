@@ -24,7 +24,12 @@
                         <h3>Figures</h3>
                         <a href="/home/figure/add">Add New Figure</a><br>
                         <a href="/home/figure/list">Edit Figure</a><br>
-                    </div>                                      
+                    </div>    
+                    <div class="col-md-3">
+                        <h3>Goods</h3>
+                        <a href="/home/good/add">Add New Goods</a><br>
+                        <a href="/home/good/list">Edit Goods</a><br>
+                    </div>                                                          
                 </div>
                 <div class="row">
                     <div class="col-md-3">

@@ -17,8 +17,10 @@ use Suin\RSSWriter\Item;
 use DB;
 
 use App\FigureDB;
+use App\Good;
 
 use App\Message;
+
 
 class DisplayController extends Controller
 {
@@ -250,6 +252,39 @@ class DisplayController extends Controller
         return view('display.figures')
           ->with('figures',$figures);
     }
+
+
+     /**
+     * Goods
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function goods() {
+       $goods = Good::all();
+
+        return view('display.goods')
+          ->with('goods',$goods);
+    }
+
+
+     /**
+     * Good
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function good($url) {
+
+       $good = Good::where('url','=',$url)->first();
+        
+
+       $figurecheck = self::figureChecK($figure->id);
+
+        return view('display.good')
+					->with('good',$good)
+          ->with('figurecheck',$figurecheck);
+		}
+
+
 
      /**
      * Nendoroids

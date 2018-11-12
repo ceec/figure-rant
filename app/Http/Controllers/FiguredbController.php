@@ -11,6 +11,8 @@ use Auth;
 use App\Orderfigure;
 use App\Character;
 use App\Event;
+use App\Good;
+use App\Ordergood;
 
 
 //   class YourClassFactory {
@@ -50,7 +52,24 @@ class FiguredbController extends Controller
 					->with('figure',$figure)
           ->with('figurecheck',$figurecheck);
 		}
-		
+    
+        
+     /**
+     * Goods
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function good($url) {
+
+       $good = Good::where('url','=',$url)->first();
+        
+
+       $goodcheck = self::goodChecK($good->id);
+
+        return view('display.good')
+		    ->with('good',$good)
+          ->with('goodcheck',$goodcheck);
+		}        
 
 
     /**
@@ -244,6 +263,30 @@ class FiguredbController extends Controller
 
       return $result;
     }     
+
+    /**
+     * Check if the user has that good
+     *
+     * @return bool
+     */
+    private function goodCheck($good_id) {
+			$user= Auth::user();    
+
+			if (!isset($user->id)) {
+				return false;
+			}
+
+
+      $check = Ordergood::where('user_id','=',$user->id)->where('good_id','=',$good_id)->count();
+
+      if ($check > 0 ) {
+        $result = true;
+      } else {
+        $result = false;
+      }
+
+      return $result;
+    } 
 
 
     ///2018-08-09 figure round up

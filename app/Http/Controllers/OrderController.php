@@ -9,6 +9,8 @@ use App\Order;
 use App\Store;
 use App\Orderfigure;
 use App\FigureDB;
+use App\Good;
+use App\Ordergood;
 use Auth;
 
 class OrderController extends Controller {
@@ -94,7 +96,31 @@ class OrderController extends Controller {
         return redirect('/figure/'.$figure->url);          
     } 
 
+    /**
+     * Add good
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function addGood(Request $request) {
+        //get the user id
+        $user = Auth::user();    
 
+        $good_id = $request->input('good_id');
+
+        $good = Good::find($good_id);
+
+        $n = new Ordergood;
+        $n->good_id = $good_id;
+        $n->user_id = $user->id;
+        $n->order_id = 0;
+        $n->price_yen = 0;
+        $n->price_usd = 0;
+        $n->status = '';
+        $n->updated_by = Auth::id();  
+        $n->save();
+
+        return redirect('/good/'.$good->url);          
+    } 
 
    /**
      * Add figure to order, more of an update
@@ -136,6 +162,44 @@ class OrderController extends Controller {
     } 
 
 
+       /**
+     * Add good to order, more of an update
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function editOrderGood(Request $request) {
+        //get the user id
+        $user = Auth::user();    
+
+        $order_good_id = $request->input('order_good_id');
+        $order_id = $request->input('order_id');
+
+        $price_yen = $request->input('price_yen');
+        $price_usd = $request->input('price_usd');
+        $status = $request->input('status');
+
+
+        if ($price_yen == '') {
+            $price_yen = 0;
+        }
+        if ($price_usd == '') {
+            $price_usd = 0;
+        }
+
+        if ($status == '') {
+            $status = '';
+        }        
+        
+        $up = Ordergood::find($order_good_id);
+        $up->order_id = $order_id;
+        $up->price_yen = $price_yen;
+        $up->price_usd = $price_usd;
+        $up->status = $status;
+        $up->updated_by = Auth::id();  
+        $up->save();        
+
+        return redirect('/home/order/edit/'.$order_id);              
+    } 
 
       /**
      * Add figure to order, more of an update
@@ -150,6 +214,27 @@ class OrderController extends Controller {
         $order_id = $request->input('order_id');
 
         $up = Orderfigure::find($order_figure_id);
+        $up->order_id = '0';
+        $up->updated_by = Auth::id();  
+        $up->save();        
+
+        return redirect('/home/order/edit/'.$order_id);              
+    }  
+
+
+      /**
+     * Remove good from order
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function removeOrderGood(Request $request) {
+        //get the user id
+        $user = Auth::user();    
+
+        $order_good_id = $request->input('order_good_id');
+        $order_id = $request->input('order_id');
+
+        $up = Ordergood::find($order_good_id);
         $up->order_id = '0';
         $up->updated_by = Auth::id();  
         $up->save();        
@@ -192,10 +277,23 @@ class OrderController extends Controller {
 
             $figures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',$order_id)->get();
 
+            //get the goods
+            $newgoods = Ordergood::where('user_id','=',$user->id)->where('order_id','=',0)->pluck('good_id','id');
+            //dd($newgoods);
+            foreach($newgoods as $key => $good) {
+                //get the figure name-> this can probably be a join
+                $good_name = Good::find($good);
+                $newgoods[$key] = $good." - ".$good_name->name;
+            }
+
+            $goods = Ordergood::where('user_id','=',$user->id)->where('order_id','=',$order_id)->get();
+
             return view('home.orderEdit')
             ->with('stores',$stores)
             ->with('newfigures',$newfigures)
+            ->with('newgoods',$newgoods)
             ->with('figures',$figures)
+            ->with('goods',$goods)
             ->with('order',$order);
     } 
 

@@ -25,6 +25,10 @@ Route::get('/orders', 'DisplayController@orders');
 Route::get('/figures', 'DisplayController@figures');
 Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
 
+//goods
+Route::get('/goods', 'DisplayController@goods');
+Route::get('/good/{good}', 'FiguredbController@good');
+
 //figureDB
 Route::get('/figure/{figure}','FiguredbController@figure');
 Route::get('/roundup/{group}','FiguredbController@roundup');
@@ -151,6 +155,14 @@ Route::get('/home/figure/list','FigureController@listDisplay');
 Route::post('/add/figure','FigureController@add');
 Route::post('/edit/figure','FigureController@edit');
 
+///goods
+Route::get('/home/good/add','GoodController@addDisplay');
+Route::get('/home/good/edit/{good_id}','GoodController@editDisplay');
+Route::get('/home/good/list','GoodController@listDisplay');
+//posting
+Route::post('/add/good','GoodController@add');
+Route::post('/edit/good','GoodController@edit');
+
 ///orders
 Route::get('/home/order/add','OrderController@addDisplay');
 Route::get('/home/order/edit/{order_id}','OrderController@editDisplay');
@@ -160,9 +172,14 @@ Route::post('/add/order','OrderController@add');
 Route::post('/edit/order','OrderController@edit');
 //adding figure to user
 Route::post('/add/user/figure','OrderController@addFigure');
+//adding good to user
+Route::post('/add/user/good','OrderController@addGood');
 //add figure to order
 Route::post('/edit/order/figure','OrderController@editOrderFigure');
 Route::post('/remove/order/figure','OrderController@removeOrderFigure');
+//add good to order
+Route::post('/edit/order/good','OrderController@editOrderGood');
+Route::post('/remove/order/good','OrderController@removeOrderGood');
 
 ///add edit categories
 //groups
