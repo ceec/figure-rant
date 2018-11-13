@@ -13,6 +13,7 @@ use App\Character;
 use App\Event;
 use App\Good;
 use App\Ordergood;
+use App\Data;
 
 
 //   class YourClassFactory {

@@ -21,6 +21,7 @@ class DataController extends Controller
      */
 
     public static function yenusd() {
+
         $orders = Order::where('total_usd','!=',0)->where('total_yen','!=',0)->orderBy('payment_date','asc')->get();
 
         foreach($orders as $order) {

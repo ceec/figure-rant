@@ -55,6 +55,12 @@ Route::get('/event/{url}', 'DisplayController@article');
 //adding in nendo tracker 2018-05-28
 Route::get('/nendoroid-tracker/{type}', 'DisplayController@nendoroidTracker');
 
+//daata
+Route::get('/graphs', 'DisplayController@graphs');
+Route::get('/data/yenusd','DataController@yenusd');
+Route::get('/data/totalorders','DataController@totalorders');
+
+
 //lul not having this under the above breaks it
 Route::get('/{category}/{url}','FiguredbController@displayCategory');
 
@@ -72,10 +78,8 @@ Route::get('/tools/nendoroid-tracker', 'DisplayController@nendoroidTrackerOld');
 //nendotracker - new version 2018-03-24
 Route::get('/nendoroid-tracker', 'DisplayController@nendoroidTracker');
 
-//daata
-Route::get('/graphs', 'DisplayController@graphs');
-Route::get('/data/yenusd','DataController@yenusd');
-Route::get('/data/totalorders','DataController@totalorders');
+
+
 
 
 //nendoroid info
