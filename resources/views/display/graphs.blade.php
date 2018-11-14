@@ -93,7 +93,6 @@ var chart = AmCharts.makeChart( "chartdiv2", {
   "legend": {},
     "valueAxes": [{
          //"stackType": "100%",
-          "stackType": "regular",
         "axisAlpha": 0.3,
         "gridAlpha": 0
     }],
