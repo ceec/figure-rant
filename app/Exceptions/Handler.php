@@ -64,7 +64,7 @@ class Handler extends ExceptionHandler
 
             $html = $handler->getHtml($e);
 
-            Mail::to(env('MAIL_TO_ADDRESS'))->send(new ExceptionOccured($html));
+            Mail::to(env('MAIL_ADDRESS'))->send(new ExceptionOccured($html));
         } catch (Exception $ex) {
             dd($ex);
         }
