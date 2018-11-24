@@ -38,12 +38,10 @@ class Handler extends ExceptionHandler
     public function report(Exception $exception)
     {
 
-        //mail the error
-        if ($this->shouldReport($exception)) {
+        //mail the error, only on production
+        if (($this->shouldReport($exception)) && (env('APP_ENV') == 'production')) {
             $this->sendEmail($exception); // sends an email
         }
-
-        // mail('cc@battab.com','Figure Rant Error', $exception);
 
         parent::report($exception);
     }
