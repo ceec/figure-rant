@@ -639,11 +639,10 @@ class DisplayController extends Controller
 
 
         $m = new Message;
-
+        $m->status = 0;
         $m->name = $request->name;
         $m->email = $request->email;
         $m->message = $request->message;
-        $m->updated_by = 0;
         $m->save();
 
 //         $name = $request->name;
