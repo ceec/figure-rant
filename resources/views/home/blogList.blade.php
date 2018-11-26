@@ -9,7 +9,11 @@
     <div class="row">
     	<div class="col-md-12">
       @foreach($blogs as $blog)
-        <a href="/home/blog/edit/{{$blog->id}}">{{ $blog->title }}</a><br>
+        @if ($blog->active == 0)
+          <span class="badge badge-primary">Not Posted</span>
+        @endif
+      
+       <a href="/home/blog/edit/{{$blog->id}}">{{ $blog->title }}</a><br>
 
       @endforeach
 			
