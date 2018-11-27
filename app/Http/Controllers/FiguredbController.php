@@ -89,9 +89,13 @@ class FiguredbController extends Controller
 				$category = ucfirst($category);
 
 				//https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
-				$category = '\App\\'.$category;		
-				$group = $category::where($type,'=',$url)->first();
-
+        $category = '\App\\'.$category;		
+        //2018-11-26 20:40 this is giving a php error when random urls are passed to it
+        try { 
+				  $group = $category::where($type,'=',$url)->first();
+        } catch (\Throwable $ex) {
+          abort(404); 
+        }
         //$group = Group::where($type,'=',$url)->first();
 
        $figures = FigureDB::where($original_category.'_id','=',$group->id)->get();
