@@ -74,7 +74,7 @@ class DataController extends Controller
      */
 
     public static function shiptime() {
-        $orders = Order::where('shipment_date','!=','2000-01-01')->orderBy('order_date','asc')->get();
+        $orders = Order::where('arrival_date','!=','2000-01-01')->where('arrival_date','!=','1900-01-01')->orderBy('order_date','asc')->get();
 
         //break into gannts
         $data = [];
@@ -82,7 +82,21 @@ class DataController extends Controller
             $chunk['category'] = $order->id;
             $chunk['start'] = $order->order_date;
             $chunk['end'] = $order->payment_date;
+            $chunk['status'] = 'Pre-order';
             $data[] = $chunk;
+            $chunk['category'] = $order->id;
+            $chunk['start'] = $order->payment_date;
+            $chunk['end'] = $order->shipment_date;
+            $chunk['color'] = 'red';
+            $chunk['status'] = 'Payment';
+            $data[] = $chunk;  
+            $chunk['category'] = $order->id;
+            $chunk['start'] = $order->shipment_date;
+            $chunk['end'] = $order->arrival_date;
+            $chunk['color'] = 'green';
+            $chunk['status'] = 'Shipped';
+            $data[] = $chunk;                
+            unset($chunk);        
         }
 
 
