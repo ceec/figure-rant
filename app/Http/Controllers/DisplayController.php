@@ -616,7 +616,14 @@ class DisplayController extends Controller
         return view('display.graphs');
     }
 
-
+    /**
+     * Graphs page - shiptime
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function shiptime() {
+        return view('display.shiptime');
+    }
 
 /////////////////////////////////
 

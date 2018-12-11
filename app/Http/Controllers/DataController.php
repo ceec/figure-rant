@@ -67,4 +67,27 @@ class DataController extends Controller
     }  
 
 
+    /**
+     * Pre-order to shipped time comparison
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public static function shiptime() {
+        $orders = Order::where('shipment_date','!=','2000-01-01')->orderBy('order_date','asc')->get();
+
+        //break into gannts
+        $data = [];
+        foreach($orders as $order) {
+            $chunk['category'] = $order->id;
+            $chunk['start'] = $order->order_date;
+            $chunk['end'] = $order->payment_date;
+            $data[] = $chunk;
+        }
+
+
+
+
+        print json_encode($data);
+    }      
 }

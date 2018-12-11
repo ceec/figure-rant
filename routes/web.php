@@ -60,6 +60,9 @@ Route::get('/graphs', 'DisplayController@graphs');
 Route::get('/data/yenusd','DataController@yenusd');
 Route::get('/data/totalorders','DataController@totalorders');
 
+Route::get('/graph/shiptime','DisplayController@shiptime');
+Route::get('/data/shiptime','DataController@shiptime');
+
 
 //lul not having this under the above breaks it
 Route::get('/{category}/{url}','FiguredbController@displayCategory');
