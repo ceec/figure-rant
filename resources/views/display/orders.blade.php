@@ -79,6 +79,13 @@ Orders - figurerant.com
                                 ?>
                                 {{$name}}<br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                <?php 
+                                    $name = substr($good->good->name,0,35);
+                                    //$name = $figure->name;
+                                ?>
+                                {{$name}}<br>
+                            @endforeach                              
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
@@ -199,6 +206,13 @@ Orders - figurerant.com
                                 ?>
                                 {{$name}}<br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                <?php 
+                                    $name = substr($good->good->name,0,35);
+                                    //$name = $figure->name;
+                                ?>
+                                {{$name}}<br>
+                            @endforeach                            
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
@@ -323,6 +337,13 @@ Orders - figurerant.com
                                 ?>
                                 {{$name}}<br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                <?php 
+                                    $name = substr($good->good->name,0,35);
+                                    //$name = $figure->name;
+                                ?>
+                                {{$name}}<br>
+                            @endforeach                            
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)

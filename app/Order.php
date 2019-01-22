@@ -41,4 +41,12 @@ class Order extends Model
     }  
 
 
+     /**
+     * Get the goods.
+     */
+    public function ordergoods()
+    {
+        return $this->hasMany('App\Ordergood');
+    }     
+
 }
