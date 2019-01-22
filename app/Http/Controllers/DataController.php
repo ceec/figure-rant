@@ -94,7 +94,7 @@ class DataController extends Controller
             $chunk['start'] = $order->shipment_date;
             $chunk['end'] = $order->arrival_date;
             $chunk['color'] = 'green';
-            $chunk['status'] = 'Shipped';
+            $chunk['status'] = 'Shipped '.$order->shipment_type;
             $data[] = $chunk;                
             unset($chunk);        
         }

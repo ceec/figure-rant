@@ -48,6 +48,13 @@
                         <a href="/home/sculptor/list">Edit Sculptor</a><br>                        
                     </div>                                        
                 </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <h3>Stores</h3>
+                        <a href="/home/store/add">Add New Store</a><br>
+                        <a href="/home/store/list">Edit Store</a><br>                          
+                    </div>
+                </div>
 
                 </div>
             </div>

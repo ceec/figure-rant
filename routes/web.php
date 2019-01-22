@@ -214,6 +214,15 @@ Route::post('/add/sculptor','SculptorController@add');
 Route::post('/edit/sculptor','SculptorController@edit');
 
 
+//Stores
+Route::get('/home/store/add','StoreController@addDisplay');
+Route::get('/home/store/edit/{store}','StoreController@editDisplay');
+Route::get('/home/store/list','StoreController@listDisplay');
+//posting
+Route::post('/add/store','StoreController@add');
+Route::post('/edit/store','StoreController@edit');
+
+
 
 ////meessssing around
 
