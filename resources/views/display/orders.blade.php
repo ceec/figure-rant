@@ -96,6 +96,14 @@ Orders - figurerant.com
                                     <br>
                                 @endif
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                {{$good->status}}
+                                @if($good->status == 'Pre-order')
+                                    - {{$good->order_date}}<br>
+                                @else
+                                    <br>
+                                @endif
+                            @endforeach                            
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -104,6 +112,12 @@ Orders - figurerant.com
                                 @endif
                                 <br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_yen != '0')
+                                  {{$good->price_yen}}
+                                @endif
+                                <br>
+                            @endforeach                            
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -111,7 +125,13 @@ Orders - figurerant.com
                                 ${{$figure->price_usd}}
                                 @endif
                                 <br>
-                            @endforeach                            
+                            @endforeach 
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_usd != '0')
+                                ${{$good->price_usd}}
+                                @endif
+                                <br>
+                            @endforeach                                                        
                         </td>
                         <td></td>
                         <td></td>    
@@ -223,6 +243,14 @@ Orders - figurerant.com
                                     <br>
                                 @endif
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                {{$good->status}}
+                                @if($good->status == 'Pre-order')
+                                    - {{$good->order_date}}<br>
+                                @else
+                                    <br>
+                                @endif
+                            @endforeach                            
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -231,6 +259,12 @@ Orders - figurerant.com
                                 @endif
                                 <br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_yen != '0')
+                                  {{$good->price_yen}}
+                                @endif
+                                <br>
+                            @endforeach                            
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -238,7 +272,13 @@ Orders - figurerant.com
                                 ${{$figure->price_usd}}
                                 @endif
                                 <br>
-                            @endforeach                            
+                            @endforeach  
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_usd != '0')
+                                ${{$good->price_usd}}
+                                @endif
+                                <br>
+                            @endforeach                                                        
                         </td>
                         <td></td>
                         <td></td>    
@@ -354,6 +394,14 @@ Orders - figurerant.com
                                     <br>
                                 @endif
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                {{$good->status}}
+                                @if($good->status == 'Pre-order')
+                                    - {{$good->order_date}}<br>
+                                @else
+                                    <br>
+                                @endif
+                            @endforeach                            
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -362,6 +410,12 @@ Orders - figurerant.com
                                 @endif
                                 <br>
                             @endforeach
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_yen != '0')
+                                  {{$good->price_yen}}
+                                @endif
+                                <br>
+                            @endforeach                            
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
@@ -369,7 +423,13 @@ Orders - figurerant.com
                                 ${{$figure->price_usd}}
                                 @endif
                                 <br>
-                            @endforeach                            
+                            @endforeach  
+                            @foreach($order->ordergoods as $good)
+                                @if($good->price_usd != '0')
+                                ${{$good->price_usd}}
+                                @endif
+                                <br>
+                            @endforeach                                                        
                         </td>
                         <td></td>
                         <td></td>    
