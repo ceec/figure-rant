@@ -104,4 +104,59 @@ class DataController extends Controller
 
         print json_encode($data);
     }      
+
+    /**
+     * Pre-order to shipped time comparison
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public static function figureyear() {
+        //SELECT orders.*,orderfigures.* FROM orders JOIN orderfigures ON orders.id = orderfigures.order_id ORDER BY orders.arrival_date
+        $figures = Order::join('orderfigures','orderfigures.order_id','=','orders.id')->orderBy('arrival_date','ASC')->get();
+
+        $data = [];
+        foreach($figures as $figure) {
+            $month = date('m',strtotime($figure->arrival_date));
+            $data[$month][] = substr($figure->arrival_date,0,4);
+
+
+            // $chunk['category'] =  date('m',strtotime($figure->arrival_date));
+            // $data[] = $chunk;                
+            // unset($chunk);              
+        }
+
+        //sort the arrays by month
+        ksort($data);
+
+        //need to count how many per year, can probably do this WAY easier in SQL
+        $finaldata = [];
+        foreach($data as $key => $value) {
+            $amount = array_count_values($value);
+            $finaldata[$key]['amount'] = $amount;
+            $finaldata[$key]['month'] = $key;
+        }
+
+
+        //somehow flatten just one of the arrays
+        $superfinaldata = [];
+        foreach($finaldata as $key => $value) {
+            $yearcount = count($value['amount']);
+            //var_dump($yearcount);
+            foreach ($value['amount'] as $year => $amount) {
+                $superfinaldata[$key][$year]= $amount;
+            }
+            $superfinaldata[$key]['month']= $key;
+        }
+
+        $extrasuperfinaldata = [];
+        foreach($superfinaldata as $data) {
+            $extrasuperfinaldata[] = $data;
+        }
+    
+        print json_encode($extrasuperfinaldata);
+    }
+
+
+
 }
