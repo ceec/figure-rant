@@ -99,6 +99,24 @@ var chart = AmCharts.makeChart("chartdiv", {
         "type": "column",
 		"color": "#000000",
         "valueField": "2017"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "2018",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "2018"
+    }, {
+        "balloonText": "<b>[[title]]</b><br><span style='font-size:14px'>[[category]]: <b>[[value]]</b></span>",
+        "fillAlphas": 0.8,
+        "labelText": "[[value]]",
+        "lineAlpha": 0.3,
+        "title": "2019",
+        "type": "column",
+		"color": "#000000",
+        "valueField": "2019"
     }],
     "categoryField": "month",
     "categoryAxis": {
