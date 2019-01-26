@@ -369,9 +369,9 @@ class DisplayController extends Controller
       $shippedorders = Order::where('arrival_date','=','2000-01-01')->where('shipment_date','>','2010-01-01')->orderBy('order_date','desc')->get();
 
       $total_usd = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_usd');
-      $total_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('total_yen');
+      $total_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->where('total_usd','=','0.00')->sum('total_yen');
       $total_shipping_usd = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_usd');
-      $total_shipping_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->sum('shipping_yen');
+      $total_shipping_yen = Order::where('arrival_date','!=','2000-01-01')->where('shipment_date','>','2010-01-01')->where('shipping_usd','=','0.00')->sum('shipping_yen');
 
 
       $preorder_total_usd = Order::where('shipment_date','<','2010-01-01')->sum('total_usd');
