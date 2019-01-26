@@ -224,7 +224,13 @@ Route::get('/home/store/list','StoreController@listDisplay');
 Route::post('/add/store','StoreController@add');
 Route::post('/edit/store','StoreController@edit');
 
-
+//scales
+Route::get('/home/scale/add','ScaleController@addDisplay');
+Route::get('/home/scale/edit/{scale}','ScaleController@editDisplay');
+Route::get('/home/scale/list','ScaleController@listDisplay');
+//posting
+Route::post('/add/scale','ScaleController@add');
+Route::post('/edit/scale','ScaleController@edit');
 
 ////meessssing around
 

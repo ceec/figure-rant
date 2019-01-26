@@ -54,6 +54,11 @@
                         <a href="/home/store/add">Add New Store</a><br>
                         <a href="/home/store/list">Edit Store</a><br>                          
                     </div>
+                    <div class="col-md-3">
+                        <h3>Scales</h3>
+                        <a href="/home/scale/add">Add New Scale</a><br>
+                        <a href="/home/scale/list">Edit Scale</a><br>                          
+                    </div>                    
                 </div>
 
                 </div>
