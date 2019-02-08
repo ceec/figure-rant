@@ -14,7 +14,7 @@ Orders - figurerant.com
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Orderd</th>
+                    <th>Ordered</th>
                     <th>Shipped</th>
                     <th>Store</th>
                     <th>Figures</th>
@@ -77,7 +77,7 @@ Orders - figurerant.com
                                     $name = substr($figure->figure->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                {{$name}}<br>
+                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
@@ -224,7 +224,7 @@ Orders - figurerant.com
                                     $name = substr($figure->figure->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                {{$name}}<br>
+                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
@@ -375,14 +375,14 @@ Orders - figurerant.com
                                     $name = substr($figure->figure->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                {{$name}}<br>
+                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
                                     $name = substr($good->good->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                {{$name}}<br>
+                                <a href="/good/{{$good->good->url}}">{{$name}}</a><br>
                             @endforeach                            
                         </td>
                         <td style="white-space: nowrap">
