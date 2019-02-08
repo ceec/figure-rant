@@ -22,11 +22,7 @@ Pre-orders - figurerant.com
                 <img class="img-responsive" height="200" src="/images/{{$figure->figure->imageFolder()}}/{{$figure->figure->url}}-released.jpg">
               </div>
               <div class="col-md-6">
-<?php 
-            $name = substr($figure->figure->name,0,35);
-            //$name = $figure->name;
-?>
-            <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>     
+            <a href="/figure/{{$figure->figure->url}}">{{$figure->figure->name}}</a><br>     
             Release date: {{date('F Y',strtotime($figure->figure->available_release_date))}}<br>
             Order date: {{$order->order_date}}      
               </div>
