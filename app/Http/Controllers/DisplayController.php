@@ -402,7 +402,25 @@ class DisplayController extends Controller
       ->with('orders',$orders)
       ->with('preorders',$preorders)
       ->with('shippedorders',$shippedorders);
-		}
+    }
+    
+    /**
+     * Preorders
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function preorders() {
+
+      $preorders = Order::where('shipment_date','<','2010-01-01')->orderBy('order_date','desc')->get();
+
+
+      return view('display.preorders')
+        ->with('preorders',$preorders);
+
+    }
+
+
+
 
     /**
      * Orders

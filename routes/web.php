@@ -20,7 +20,8 @@ Route::get('/order/{order_id}', 'DisplayController@order');
 
 //new orders
 Route::get('/orders', 'DisplayController@orders');
-
+//preorders
+Route::get('/preorders', 'DisplayController@preorders');
 
 Route::get('/figures', 'DisplayController@figures');
 Route::get('/figures/nendoroids', 'DisplayController@nendoroids');
