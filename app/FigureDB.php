@@ -72,6 +72,8 @@ class FigureDB extends Model
     {
        if ($this->productline->name == 'Nendoroid') {
           $image_folder = 'nendoroids';
+       } else if ($this->productline->name == 'figma') {
+           $image_folder = 'figma';
        } else {
           $image_folder = 'scales';
        }
