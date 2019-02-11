@@ -27,6 +27,11 @@
                     @endif
                 </div>
                 <div class="col-md-3">
+                    <?php
+                    $test = public_path('/images/nendoroids/'.$folder.'-concept.jpg');
+                    dd($test);
+
+                    ?>
                     @if (file_exists(public_path('/images/nendoroids/'.$folder.'-concept.jpg')))
 
                         <img class="img-responsive" src="/images/nendoroids/{{$folder}}-concept.jpg">

@@ -13,7 +13,7 @@ Pre-orders - figurerant.com
   </style>
 <div class="container">
     <div class="row">
-        <h1>Pre-orders</h1>
+    <h1>Pre-orders</h1>
         @foreach($preorders as $order)
           @foreach($order->orderfigures as $figure)
           <div class="col-md-5 preorder">
