@@ -233,6 +233,15 @@ Route::get('/home/scale/list','ScaleController@listDisplay');
 Route::post('/add/scale','ScaleController@add');
 Route::post('/edit/scale','ScaleController@edit');
 
+//manufacturers
+Route::get('/home/manufacturer/add','ManufacturerController@addDisplay');
+Route::get('/home/manufacturer/edit/{scale}','ManufacturerController@editDisplay');
+Route::get('/home/manufacturer/list','ManufacturerController@listDisplay');
+//posting
+Route::post('/add/manufacturer','ManufacturerController@add');
+Route::post('/edit/manufacturer','ManufacturerController@edit');
+
+
 ////meessssing around
 
 Route::get('/tool/addnendos','FiguredbController@addNendos');

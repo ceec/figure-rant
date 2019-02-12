@@ -58,7 +58,12 @@
                         <h3>Scales</h3>
                         <a href="/home/scale/add">Add New Scale</a><br>
                         <a href="/home/scale/list">Edit Scale</a><br>                          
-                    </div>                    
+                    </div>   
+                    <div class="col-md-3">
+                        <h3>Manufacturers</h3>
+                        <a href="/home/manufacturer/add">Add New Manufacturer</a><br>
+                        <a href="/home/manufacturer/list">Edit Manufacturer</a><br>                          
+                    </div>                                        
                 </div>
 
                 </div>
