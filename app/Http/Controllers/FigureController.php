@@ -172,7 +172,14 @@ class FigureController extends Controller
         $up->productline_id = $request->input('productline_id');
         $up->item_number = $request->input('item_number');
         $up->group_id = $request->input('group_id');
-        $up->character_id = $request->input('character_id');
+
+        //catch if somehow is null
+        $character_id = $request->input('character_id');
+        if ($character_id == "") {
+            $character_id = 1;
+        }
+
+        $up->character_id = $character_id;
         $up->sculptor_id = $request->input('sculptor_id');
 
         //check for empty dates
