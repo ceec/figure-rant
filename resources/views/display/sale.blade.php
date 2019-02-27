@@ -59,17 +59,17 @@ For Sale | Figure Rant
             </tr>
             <tr>
               <td>935 - Kaimina - with GSC Bonus</td>
-              <td>$60</td>
+              <td>$50</td>
               <td>New</td>
               <td></td>
-              <td><a href="">MFC</a></td>              
+              <td><a href="https://myfigurecollection.net/item/651234">MFC</a></td>              
             </tr>    
             <tr>
-              <td>970-DX - Merlin - with GSC Bonus</td>
-              <td>$45</td>
+              <td>970-DX - Merlin Magus of Flowers Version - with GSC Bonus</td>
+              <td>$55</td>
               <td>New</td>
               <td></td>
-              <td><a href="">MFC</a></td>              
+              <td><a href="https://myfigurecollection.net/item/741846">MFC</a></td>              
             </tr>                                                         
           </table>          
 
@@ -103,24 +103,24 @@ For Sale | Figure Rant
             </tr>               
             <tr>
               <td>539 - Harvest Moon Miku</td>
-              <td>$40</td>
+              <td>$50</td>
               <td>Used</td>
               <td></td>
-              <td><a href="">MFC</a></td>              
+              <td><a href="https://myfigurecollection.net/item/323689">MFC</a></td>              
             </tr>   
             <tr>
               <td>768 - Harvest Moon Rin</td>
-              <td>$40</td>
+              <td>$50</td>
               <td>Used</td>
               <td></td>
-              <td><a href="">MFC</a></td>              
+              <td><a href="https://myfigurecollection.net/item/549377">MFC</a></td>              
             </tr>   
             <tr>
               <td>769 - Harvest Moon Len</td>
-              <td>$40</td>
+              <td>$50</td>
               <td>Used</td>
               <td></td>
-              <td><a href="">MFC</a></td>              
+              <td><a href="https://myfigurecollection.net/item/549380">MFC</a></td>              
             </tr>                                                                                                                                                                                                                                                                                                   
           </table>   
 
@@ -139,7 +139,7 @@ For Sale | Figure Rant
               <td>$20</td>
               <td>New</td>
               <td></td>
-              <td><a href="">MFC</a></td>
+              <td><a href="https://myfigurecollection.net/item/740376">MFC</a></td>
             </tr>
                                                          
           </table> 
