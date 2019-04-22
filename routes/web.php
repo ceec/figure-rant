@@ -76,6 +76,9 @@ Route::get('/createrss','DisplayController@rss');
 //sale
 Route::get('/sale','DisplayController@sale');
 
+//collection
+Route::get('/collection','DisplayController@collection');
+
 //tools
 Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
 Route::get('/tools/amiami-search', 'DisplayController@toolAmiAmiSearch');

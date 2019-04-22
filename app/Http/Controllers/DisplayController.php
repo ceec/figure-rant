@@ -18,6 +18,7 @@ use DB;
 
 use App\FigureDB;
 use App\Good;
+use App\Orderfigure;
 
 use App\Message;
 
@@ -622,6 +623,19 @@ class DisplayController extends Controller
      */
     public function sale() {
         return view('display.sale');
+    }
+
+    /**
+     * Collection
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function collection() {
+
+        $figures = Orderfigure::all();
+
+        return view('display.collection')
+        ->with('figures',$figures);
     }
 
 
