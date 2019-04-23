@@ -6,21 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Figure extends Model
 {
-        /**
-     * Get the group.
-     */
-    public function group()
-    {
-        return $this->belongsTo('App\Group');
+    public function figureDB() {
+        return $this->belongsTo('App\FigureDB');
     }
-
-
-    //  /**
-    //  * Get the group.
-    //  */
-    // public function group()
-    // {
-    //     return $this->belongsTo('App\Group');
-    // }
-
 }

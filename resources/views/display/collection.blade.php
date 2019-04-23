@@ -8,21 +8,15 @@ About - figurerant.com
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-12">
             <h2>Collection</h2>
 
             @foreach($figures as $figure)
-                {{$figure->figure->name}}<br>
+                {{$figure}}<br>
             @endforeach
                                
                              
         </div>
-        <div class="col-md-2">
-            <p>
-                @include('display.rightsidebar')
-            </p>
-        </div>
-
     </div>
 </div>
 @endsection

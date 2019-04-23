@@ -116,74 +116,8 @@ class DisplayController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function about() {
-       //$collection = Collection::where('user_id','=',1)->figures;
-       $scale18 = Figure::where('scale_id','=','1')->get();
-       //get how many scales
-       $amount18 = Figure::where('scale_id','=','1')->count();
 
-       //17 scales
-        $scale17 = Figure::where('scale_id','=','2')->get();
-       //get how many scales
-       $amount17 = Figure::where('scale_id','=','2')->count();
-
-       //16 scales
-        $scale16 = Figure::where('scale_id','=','3')->get();
-       //get how many scales
-       $amount16 = Figure::where('scale_id','=','3')->count(); 
-
-       //nendos
-       $nendos = Figure::where('productline_id','=','1')->get();
-
-       //amount nendos
-       $amountnendos = Figure::where('productline_id','=','1')->count(); 
-
-
-       //nendo co-de
-       $nendocodes = Figure::where('productline_id','=','4')->get();
-       $amountnendocodes = Figure::where('productline_id','=','4')->count(); 
-
-       //nendodroid petit
-       $nendopetites = Figure::where('productline_id','=','2')->get();
-       $amountnendopetites = Figure::where('productline_id','=','2')->count(); 
-
-
-
-       //cu-pouche
-       $cupoches = Figure::where('productline_id','=','5')->get();
-       $amountcupoches = Figure::where('productline_id','=','5')->count(); 
-
-       //figma
-       $figmas = Figure::where('productline_id','=','6')->get();
-       $amountfigmas = Figure::where('productline_id','=','6')->count(); 
-
-       //medicchu
-
-       //prize figures
-
-
-
-       $figures = DB::select("SELECT figures.* FROM figures,collections WHERE collections.user_id='1' AND collections.figure_id = figures.id AND figures.scale_id='0' AND figures.productline_id !='1' AND figures.productline_id !='2' AND figures.productline_id !='4' AND figures.productline_id !='5' AND figures.productline_id !='6'");
-
-       //how many in total
-       $total = FigureController::stats();
-
-        return view('display.about')
-          ->with('scale18',$scale18)
-          ->with('amount18',$amount18)
-          ->with('scale17',$scale17)
-          ->with('amount17',$amount17)              
-          ->with('scale16',$scale16)
-          ->with('amount16',$amount16)  
-          ->with('nendos',$nendos)
-          ->with('amountnendos',$amountnendos)     
-          ->with('nendocodes',$nendocodes)
-          ->with('nendopetites',$nendopetites)
-          ->with('amountnendopetites',$amountnendopetites)
-          ->with('amountnendocodes',$amountnendocodes)  
-          ->with('figmas',$figmas)
-          ->with('amountfigmas',$amountfigmas)
-          ->with('figures',$figures)
-          ->with('total',$total);
+        return view('display.about');
     }
 
 
@@ -632,7 +566,7 @@ class DisplayController extends Controller
      */
     public function collection() {
 
-        $figures = Orderfigure::all();
+        $figures = Figure::all();
 
         return view('display.collection')
         ->with('figures',$figures);
