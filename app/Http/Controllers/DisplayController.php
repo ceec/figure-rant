@@ -566,7 +566,7 @@ class DisplayController extends Controller
      */
     public function collection() {
 
-        $figures = Figure::all();
+        $figures = Figure::where('status','=',2)->get();
 
         return view('display.collection')
         ->with('figures',$figures);

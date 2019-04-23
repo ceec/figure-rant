@@ -12,7 +12,7 @@ About - figurerant.com
             <h2>Collection</h2>
 
             @foreach($figures as $figure)
-                {{$figure}}<br>
+                {{$figure->figureDB->name}}<br>
             @endforeach
                                
                              
