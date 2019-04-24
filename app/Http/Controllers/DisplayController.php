@@ -574,6 +574,20 @@ class DisplayController extends Controller
 
 
     /**
+     * Sold
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sold() {
+
+        $figures = Figure::where('status','=',3)->get();
+
+        return view('display.collection')
+        ->with('figures',$figures);
+    }
+
+
+    /**
      * Graphs page
      *
      * @return \Illuminate\Http\Response

@@ -78,6 +78,7 @@ Route::get('/sale','DisplayController@sale');
 
 //collection
 Route::get('/collection','DisplayController@collection');
+Route::get('/sold','DisplayController@sold');
 
 //tools
 Route::get('/tools', 'DisplayController@toolAmiAmiSearch');
