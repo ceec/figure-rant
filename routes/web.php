@@ -203,7 +203,10 @@ Route::get('/home/sale/list','SaleController@listDisplay');
 Route::post('/add/sale','SaleController@add');
 Route::post('/edit/sale','SaleController@edit');
 
-
+//add figure to sale
+Route::post('/add/sale/figure','SaleController@addSaleFigure');
+Route::post('/edit/sale/figure','SaleController@editSaleFigure');
+Route::post('/remove/sale/figure','SaleController@removeSaleFigure');
 
 ///add edit categories
 //groups
