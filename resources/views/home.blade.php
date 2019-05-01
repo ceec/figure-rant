@@ -46,7 +46,12 @@
                         <h3>Sculptors</h3>
                         <a href="/home/sculptor/add">Add New Sculptor</a><br>
                         <a href="/home/sculptor/list">Edit Sculptor</a><br>                        
-                    </div>                                        
+                    </div>  
+                    <div class="col-md-3">
+                        <h3>Sales</h3>
+                        <a href="/home/sale/add">Add New Sale</a><br>
+                        <a href="/home/sale/list">Edit Sale</a><br>                        
+                    </div>                                                            
                 </div>
                 <div class="row">
                     <div class="col-md-3">

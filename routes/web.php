@@ -195,6 +195,16 @@ Route::post('/remove/order/figure','OrderController@removeOrderFigure');
 Route::post('/edit/order/good','OrderController@editOrderGood');
 Route::post('/remove/order/good','OrderController@removeOrderGood');
 
+//sales of figures
+Route::get('/home/sale/add','SaleController@addDisplay');
+Route::get('/home/sale/edit/{sale_id}','SaleController@editDisplay');
+Route::get('/home/sale/list','SaleController@listDisplay');
+//posting
+Route::post('/add/sale','SaleController@add');
+Route::post('/edit/sale','SaleController@edit');
+
+
+
 ///add edit categories
 //groups
 Route::get('/home/group/add','GroupController@addDisplay');
