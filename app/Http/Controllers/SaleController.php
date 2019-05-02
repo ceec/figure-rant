@@ -79,7 +79,9 @@ class SaleController extends Controller {
 
             $figures = Salefigure::where('sale_id','=',$sale_id)->get();
 
-            $newfigures = Figure::where('status','=',3)->pluck('figure_id','id');
+            //SELECT figures.* FROM figures left join salefigures on figures.id = salefigures.figure_id WHERE figures.status=3 AND salefigures.figure_id IS NULL
+            //okay now how to ORM that haha
+            $newfigures = Figure::leftJoin('salefigures','figures.id','=','salefigures.figure_id')->where('figures.status','=','3')->whereNull('salefigures.figure_id')->pluck('figures.figure_id','figures.id');
             
             foreach($newfigures as $key => $figure) {
                 //get the figure name-> this can probably be a join
