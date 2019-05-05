@@ -70,7 +70,7 @@ class FigureDB extends Model
      */
     public function imageFolder()
     {
-       if ($this->productline->name == 'Nendoroid') {
+       if ( ($this->productline->name == 'Nendoroid') || ($this->productline->name == 'Nendoroid Co-de') ) {
           $image_folder = 'nendoroids';
        } else if ($this->productline->name == 'figma') {
            $image_folder = 'figma';
