@@ -20,7 +20,7 @@ About - figurerant.com
                     @else
                         <img class="img-responsive" src="/images/scales/{{$figure->figureDB->url}}-released.jpg">
                     @endif                    
-                    {{$figure->figureDB->name}}<br>
+                <a href="/figure/{{$figure->figureDB->url}}">{{$figure->figureDB->name}}</a><br>
                 </div>
                 <?php $x++; ?>
                 @if ($x%4 == 0)
