@@ -9,7 +9,7 @@ About - figurerant.com
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h2>Collection</h2>
+        <h2>Collection -  {{$totalHave}} Figures</h2>
             <div class="row">
             <?php $x = 0; ?>
 

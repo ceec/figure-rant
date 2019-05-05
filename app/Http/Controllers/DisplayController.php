@@ -568,7 +568,10 @@ class DisplayController extends Controller
 
         $figures = Figure::where('status','=',2)->get();
 
+        $totalHave = Figure::where('status','=',2)->count();
+
         return view('display.collection')
+        ->with('totalHave',$totalHave)
         ->with('figures',$figures);
     }
 
