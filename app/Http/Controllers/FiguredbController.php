@@ -86,7 +86,11 @@ class FiguredbController extends Controller
 
 				$type = self::checkParameter($url);
 
-				$category = ucfirst($category);
+        $category = ucfirst($category);
+        
+        //handle spaces
+        $category = str_replace('-','',$category);
+        $original_category = str_replace('-','',$original_category);
 
 				//https://stackoverflow.com/questions/7131295/dynamic-class-names-in-php
         $category = '\App\\'.$category;		
