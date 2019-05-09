@@ -67,6 +67,8 @@ Route::get('/data/shiptime','DataController@shiptime');
 Route::get('/graph/figureyear','GraphController@figureyear');
 Route::get('/data/figureyear','DataController@figureyear');
 
+Route::get('/data/figureyeartotal','DataController@figureyeartotal');
+
 //lul not having this under the above breaks it
 Route::get('/{category}/{url}','FiguredbController@displayCategory');
 

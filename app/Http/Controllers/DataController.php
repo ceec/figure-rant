@@ -157,6 +157,39 @@ class DataController extends Controller
         print json_encode($extrasuperfinaldata);
     }
 
+    /**
+     * Pre-order to shipped time comparison
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public static function figureyeartotal() {
+        $figures = Order::join('orderfigures','orderfigures.order_id','=','orders.id')->orderBy('arrival_date','ASC')->get();
+
+        $data = [];
+        foreach($figures as $figure) {
+            $month = date('m',strtotime($figure->arrival_date));
+            $data[$month][] = substr($figure->arrival_date,0,4);
+
+
+            // $chunk['category'] =  date('m',strtotime($figure->arrival_date));
+            // $data[] = $chunk;                
+            // unset($chunk);              
+        }
+
+        //sort the arrays by month
+        ksort($data);
+
+        //need to count how many per year, can probably do this WAY easier in SQL
+        $finaldata = [];
+        foreach($data as $key => $value) {
+            $amount = array_count_values($value);
+            $finaldata[$key]['amount'] = $amount;
+            $finaldata[$key]['month'] = $key;
+        }
+
+        print json_encode($finaldata);
+    }    
 
 
 }
