@@ -11,6 +11,7 @@ use App\Orderfigure;
 use App\FigureDB;
 use App\Good;
 use App\Ordergood;
+use App\Figure;
 use Auth;
 
 class OrderController extends Controller {
@@ -92,6 +93,14 @@ class OrderController extends Controller {
         $n->status = '';
         $n->updated_by = Auth::id();  
         $n->save();
+
+        //also add it to Figure
+        $f = new Figure;
+        $f->user_id = $user->id;
+        $f->figure_id = $figure_id;
+        $f->status = 0;
+        $f->updated_by = Auth::id();  
+        $f->save();
 
         return redirect('/figure/'.$figure->url);          
     } 
