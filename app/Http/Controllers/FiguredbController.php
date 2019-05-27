@@ -44,8 +44,14 @@ class FiguredbController extends Controller
      */
     public function figure($url) {
 
-       $figure = FigureDB::where('url','=',$url)->first();
+      $figure = FigureDB::where('url','=',$url)->first();
         
+      //need to be friendly when file doesnt exist
+        //when bad url is passed
+        if (empty($figure)) {
+            //want to go to 404 page 
+            abort(404);
+        }  
 
        $figurecheck = self::figureChecK($figure->id);
 
