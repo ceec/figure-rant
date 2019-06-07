@@ -118,7 +118,7 @@ Route::get('rss.xml', function(){
     if (!$feed->isCached())
     {
        // creating rss feed with our most recent 20 posts
-       $posts = \DB::table('blogs')->orderBy('created_at', 'desc')->take(20)->get();
+       $posts = \DB::table('blogs')->where('active','=',1)->orderBy('created_at', 'desc')->take(20)->get();
 
        // set your feed's title, description, link, pubdate and language
        $feed->title = 'Figure Rant';
