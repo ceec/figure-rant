@@ -135,7 +135,7 @@ class SaleController extends Controller {
         //$n->user_id = $user->id;
         $n->sale_id = $sale_id;
         $n->price_usd = 0;
-        //$n->updated_by = Auth::id();  
+        $n->updated_by = Auth::id();  
         $n->save();
 
         return redirect('/home/sale/edit/'.$sale_id);      
@@ -163,7 +163,6 @@ class SaleController extends Controller {
 
         $s = Salefigure::find($sale_figure_id);
         $s->sale_id = $sale_id;
-        $s->figure_id = $sale_figure_id;
         $s->price_usd = $price_usd;
         $s->updated_by = Auth::id();  
         $s->save();        
