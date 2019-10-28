@@ -12,9 +12,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Store</th>
-                <th>Order ID</th>
-                <th>Order Date</th>
+                <th>Sale Date</th>
+                <th>Total</th>
+                <th>Shipping</th>
                 <th>Ship Date</th>
                 <th>Figures</th>
             </tr>
@@ -22,17 +22,18 @@
       @foreach($sales as $sale)
         <tr>
             <td><a href="/home/sale/edit/{{$sale->id}}">{{$sale->id}}</a></td>
-            <td>        
-            </td>
+            <td> {{date('Y-m-d',strtotime($sale->created_at))}}</td>
+            <td>{{$sale->total_usd}}</td>
+            <td>{{$sale->shipping_usd}}</td>
+            <td></td>
             <td>
-            </td>
-            <td nowrap>
-
-            </td>
-            <td nowrap>
-
-            </td>            
-            <td>
+                @foreach($sale->salefigures as $figure)
+                    <?php 
+                        $name = substr($figure->figure->figureDB->name,0,35);
+                        //$name = $figure->name;
+                    ?>
+                    {{$figure->price_usd}} {{$name}}<br>
+                @endforeach
 
             </td>
         </tr>
