@@ -32,13 +32,13 @@
               {!! Form::text('status',$figure->status,['class'=>'','id'=>'url']) !!}
               {!! Form::submit('Edit Figure') !!}    
               {!! Form::hidden('sale_figure_id',$figure->id) !!}    
-               {!! Form::hidden('order_id',$figure->order_id) !!}                                                                           
+               {!! Form::hidden('sale_id',$sale->id) !!}                                                                           
               {!! Form::close() !!}   
 
               {!! Form::open(['url' => '/remove/sale/figure']) !!}
               {!! Form::submit('X') !!}    
               {!! Form::hidden('sale_figure_id',$figure->id) !!}   
-              {!! Form::hidden('sale_id',$figure->sale_id) !!}                                                                     
+              {!! Form::hidden('sale_id',$sale->id) !!}                                                                     
               {!! Form::close() !!}                 
             @endforeach
             
