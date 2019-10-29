@@ -28,13 +28,10 @@
             <td></td>
             <td>
                 @foreach($sale->salefigures as $figure)
-
-                {{$figure->figure}}<br>
                     <?php 
-                       // $name = substr($figure->figure->figureDB->name,0,35);
-                       //{{$figure->price_usd}} {{$name}}<br>
+                        $name = substr($figure->figure->figureDB->name,0,35);
                     ?>
-                    
+                    {{$figure->price_usd}} {{$name}}<br>
                 @endforeach
 
             </td>
