@@ -28,11 +28,7 @@
             <td></td>
             <td>
                 @foreach($sale->salefigures as $figure)
-                    <?php 
-                        $name = substr($figure->figure->figureDB->name,0,35);
-                        //$name = $figure->name;
-                    ?>
-                    {{$figure->price_usd}} {{$name}}<br>
+
                 @endforeach
 
             </td>
