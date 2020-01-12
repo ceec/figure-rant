@@ -54,7 +54,7 @@ For Sale | Figure Rant
               <td>Lucky Beast</td>
               <td>$15</td>
               <td>Used</td>
-              <td>Not a nendo but will sell for $5 if bought with Serval</td>
+              <td>Not a nendo but will sell for $5 if bought with Serval. It was sold in a plastic bag so it has no box.</td>
               <td><a href="https://myfigurecollection.net/item/604210">MFC</a></td>              
             </tr>              
             <tr>
@@ -67,7 +67,7 @@ For Sale | Figure Rant
             <tr>
               <td>Nendoroid Co-de Toudou Shion - Baby Monster Cyalume</td>
               <td>$5</td>
-              <td>Used</td>
+              <td>Used - Have container she came in</td>
               <td>She suffered a fall which left scraping on her head as well damage to her hair piece.</td>
               <td><a href="https://myfigurecollection.net/item/396844">MFC</a></td>              
             </tr>                                   
@@ -95,14 +95,14 @@ For Sale | Figure Rant
             <tr>
               <td>Nendoroid Co-de Kinomoto Sakura - Black Cat Maid</td>
               <td>$50</td>
-              <td>Used</td>
+              <td>Used - Have container she came in</td>
               <td></td>
               <td><a href="https://myfigurecollection.net/item/396844">MFC</a></td>              
             </tr> 
             <tr>
               <td>Nendoroid Co-de Kinomoto Sakura - Angel Crown</td>
               <td>$40</td>
-              <td>Used</td>
+              <td>Used - Have container she came in</td>
               <td></td>
               <td><a href="https://myfigurecollection.net/item/444485">MFC</a></td>              
             </tr>                                                             
@@ -149,26 +149,33 @@ For Sale | Figure Rant
               <td><a href="https://myfigurecollection.net/item/391850">MFC</a></td>              
             </tr>                           
             <tr>
-              <td>NNendoroid More: Konnosuke Face Parts Case</td>
+              <td>Nendoroid More: Konnosuke Face Parts Case</td>
               <td>$15</td>
-              <td>Used</td>
+              <td>Used - Have container they came in</td>
               <td></td>
               <td><a href="https://myfigurecollection.net/item/463554">MFC</a></td>              
             </tr>
+            <tr>
+              <td>Nendoroid More: Torikaekkoface Himouto! Umaru-chan</td>
+              <td>$25 - All six faceplates</td>
+              <td>Used - Have all the boxes they came in</td>
+              <td></td>
+              <td><a href="https://myfigurecollection.net/entry/137705">MFC</a></td>              
+            </tr>            
 
              
           </table>   
 
 
           <h2>Scales</h2>
-          <div class="row">
+          <!--<div class="row">
             <div class="col-md-6">
               <img class="img-responsive" src="/images/sale/0305191617a.jpg">
             </div>
-            <!--<div class="col-md-6">
+            <div class="col-md-6">
               <img class="img-responsive" src="/images/sale/0202181419.jpg">
-            </div>-->
-          </div>
+            </div>
+          </div>-->
           
           
           <table class="table">
