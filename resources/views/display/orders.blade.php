@@ -68,7 +68,7 @@ Orders - figurerant.com
                     <tr>
                         <td></td>
                         <td></td>
-                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{$order->tracking_number}}</a></td>
+                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{substr($order->tracking_number,0,15)}}</a></td>
                         <td></td>
 
                         <td>
@@ -215,7 +215,7 @@ Orders - figurerant.com
                     <tr>
                         <td></td>
                         <td></td>
-                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{$order->tracking_number}}</a></td>
+                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{substr($order->tracking_number,0,15)}}</a></td>
                         <td></td>
 
                         <td>
@@ -366,7 +366,7 @@ Orders - figurerant.com
                     <tr>
                         <td></td>
                         <td></td>
-                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{$order->tracking_number}}</a></td>
+                        <td><a href="https://trackings.post.japanpost.jp/services/srv/search/?requestNo1={{$order->tracking_number}}&requestNo2=&requestNo3=&requestNo4=&requestNo5=&requestNo6=&requestNo7=&requestNo8=&requestNo9=&requestNo10=&search.x=0&search.y=0&search=Tracking+start&locale=en&startingUrlPatten=">{{substr($order->tracking_number,0,15)}}</a></td>
                         <td></td>
 
                         <td>
