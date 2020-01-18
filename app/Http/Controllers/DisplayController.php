@@ -116,8 +116,14 @@ class DisplayController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function about() {
+      // Let's create some stats
+      // Not sure on these statuses
+      $figures = Figure::where('status','=',2)->count();
+      $sold = Figure::where('status','=',3)->count();
 
-        return view('display.about');
+        return view('display.about')
+        ->with('figures',$figures)
+        ->with('sold',$sold);
     }
 
 
