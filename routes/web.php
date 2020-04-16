@@ -188,6 +188,7 @@ Route::post('/add/order','OrderController@add');
 Route::post('/edit/order','OrderController@edit');
 //adding figure to user
 Route::post('/add/user/figure','OrderController@addFigure');
+Route::post('/edit/user/figure','UserfigureController@edit');
 //adding good to user
 Route::post('/add/user/good','OrderController@addGood');
 //add figure to order

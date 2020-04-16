@@ -14,6 +14,8 @@ use App\Event;
 use App\Good;
 use App\Ordergood;
 use App\Data;
+use App\Figure;
+use App\Figurestatus;
 
 
 //   class YourClassFactory {
@@ -53,10 +55,23 @@ class FiguredbController extends Controller
             abort(404);
         }  
 
-       $figurecheck = self::figureChecK($figure->id);
+        // When a user is logged in, give them the option to add a figure to their collection
+        // Legacy figureCheck checked if there was a record in Orders but now moving that to Figures
+
+        $user= Auth::user();    
+
+        if (isset($user->id)) {
+          $figurecheck = Figure::where('figure_id','=',$figure->id)->where('user_id','=',$user->id)->first();
+        } else {
+          $figurecheck = false;
+        }
+
+        // Get the status the figure can be
+        $status = Figurestatus::pluck('status','id');
 
         return view('display.figure')
-					->with('figure',$figure)
+          ->with('figure',$figure)
+          ->with('status',$status)
           ->with('figurecheck',$figurecheck);
 		}
     

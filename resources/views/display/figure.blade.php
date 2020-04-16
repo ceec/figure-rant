@@ -13,9 +13,15 @@
            
             <img class="img-responsive" src="/images/{{$figure->imageFolder()}}/{{$figure->url}}-released.jpg">
             @if (!Auth::guest())
-							<br>
-							@if($figurecheck)
-								Figure Added
+                            <br>
+                            @if($figurecheck)
+                                {!! Form::open(['url' => '/edit/user/figure']) !!}
+                                {!! Form::select('status',$status,$figurecheck->status,['class'=>'form-control', 'id'=>'status']) !!} 
+                                {!! Form::hidden('figure_id',$figurecheck->id) !!}       
+                                {!! Form::hidden('figuredb_id',$figure->id) !!}                                                                      
+								{!! Form::submit('Update') !!}
+								{!! Form::close() !!}             
+
 							@else
 								{!! Form::open(['url' => '/add/user/figure']) !!}
 								{!! Form::hidden('figure_id',$figure->id) !!}                                                                      
