@@ -15,12 +15,8 @@ About - figurerant.com
 
             @foreach($figures as $figure)
                 <div class="col-md-3">
-                    @if( ($figure->figureDB->productline_id == 7) || ($figure->figureDB->productline_id == 4) )
-                        <img class="img-responsive" src="/images/nendoroids/{{$figure->figureDB->url}}-released.jpg">
-                    @else
-                        <img class="img-responsive" src="/images/scales/{{$figure->figureDB->url}}-released.jpg">
-                    @endif                    
-                <a href="/figure/{{$figure->figureDB->url}}">{{$figure->figureDB->name}}</a><br>
+                    <img class="img-responsive" src="/images/collection/main/{{$figure->figureDB->id}}.jpg">                 
+                    <a href="/figure/{{$figure->figureDB->url}}">{{$figure->figureDB->name}}</a><br>
                 </div>
                 <?php $x++; ?>
                 @if ($x%4 == 0)

@@ -572,7 +572,7 @@ class DisplayController extends Controller
      */
     public function collection() {
 
-        $figures = Figure::where('status','=',2)->get();
+        $figures = Figure::where('status','=',2)->orderBy('id','desc')->get();
 
         $totalHave = Figure::where('status','=',2)->count();
 
