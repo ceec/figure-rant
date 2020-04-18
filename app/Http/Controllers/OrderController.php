@@ -139,31 +139,12 @@ class OrderController extends Controller {
     public function editOrderFigure(Request $request) {
         //get the user id
         $user = Auth::user();    
-
+        
         $order_figure_id = $request->input('order_figure_id');
-        $order_id = $request->input('order_id');
-
-        $price_yen = $request->input('price_yen');
-        $price_usd = $request->input('price_usd');
-        $status = $request->input('status');
-
-
-        if ($price_yen == '') {
-            $price_yen = 0;
-        }
-        if ($price_usd == '') {
-            $price_usd = 0;
-        }
-
-        if ($status == '') {
-            $status = '';
-        }        
+        $order_id = $request->input('order_id');  
         
         $up = Orderfigure::find($order_figure_id);
         $up->order_id = $order_id;
-        $up->price_yen = $price_yen;
-        $up->price_usd = $price_usd;
-        $up->status = $status;
         $up->updated_by = Auth::id();  
         $up->save();        
 
@@ -276,12 +257,12 @@ class OrderController extends Controller {
             $user = Auth::user(); 
 
             //right now its just the figure
-            $newfigures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',0)->pluck('figure_id','id');
+            $newfigures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',0)->get();
             
-            foreach($newfigures as $key => $figure) {
-                //get the figure name-> this can probably be a join
-                $figure_name = FigureDB::find($figure);
-                $newfigures[$key] = $figure." - ".$figure_name->name;
+            $figurestoadd = [];
+
+            foreach($newfigures as $figure) {
+                $figurestoadd[$figure->id] = $figure->userfigure->figureDB->id." - ".$figure->userfigure->figureDB->name;
             }
 
             $figures = Orderfigure::where('user_id','=',$user->id)->where('order_id','=',$order_id)->get();
@@ -299,7 +280,7 @@ class OrderController extends Controller {
 
             return view('home.orderEdit')
             ->with('stores',$stores)
-            ->with('newfigures',$newfigures)
+            ->with('newfigures',$figurestoadd)
             ->with('newgoods',$newgoods)
             ->with('figures',$figures)
             ->with('goods',$goods)
@@ -334,5 +315,35 @@ class OrderController extends Controller {
         return redirect('/home/order/edit/'.$order_id);          
     } 
 
+
+     /**
+     * Tool to move orderfigures data
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function moveorderfigures() {
+
+        // Grab all the orderfigures
+        $orderfigures = Orderfigure::all();
+
+        foreach($orderfigures as $order) {
+
+            // Update figure to have the data from orderfigures
+            $figure = Figure::where('figure_id','=',$order->figuredb_id)->first();
+            $figure->price_yen = $order->price_yen;
+            $figure->price_usd = $order->price_usd;
+            $figure->condition = $order->status;
+            $figure->save();
+
+            // Add the figure->id to orderfigure in figure_id
+            $orderfigure = Orderfigure::find($order->id);
+            $orderfigure->figure_id = $figure->id;
+            $orderfigure->save();
+
+            
+        }
+
+                 
+    }    
 
 }

@@ -41,7 +41,7 @@
             <td>
                                             @foreach($order->orderfigures as $figure)
                                 <?php 
-                                    $name = substr($figure->figure->name,0,35);
+                                    $name = substr($figure->userfigure->figureDB->name,0,35);
                                     //$name = $figure->name;
                                 ?>
                                 {{$name}}<br>

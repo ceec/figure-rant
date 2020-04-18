@@ -187,7 +187,7 @@ Route::get('/home/order/list','OrderController@listDisplay');
 Route::post('/add/order','OrderController@add');
 Route::post('/edit/order','OrderController@edit');
 //adding figure to user
-Route::post('/add/user/figure','OrderController@addFigure');
+Route::post('/add/user/figure','UserfigureController@addFigure');
 Route::post('/edit/user/figure','UserfigureController@edit');
 //adding good to user
 Route::post('/add/user/good','OrderController@addGood');
@@ -267,3 +267,4 @@ Route::post('/edit/manufacturer','ManufacturerController@edit');
 Route::get('/tool/addnendos','FiguredbController@addNendos');
 
 
+Route::get('/home/tool/moveorderfigures','OrderController@moveorderfigures');

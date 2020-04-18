@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<style>
+  .figure-edit {
+    padding-right: 0px;
+  }
+
+  .figure-edit-inner {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  </style>
 <div class="container">
 
     <h1>Editing {{ $order->store_id }} - {{ $order->store_order_id }} - {{ $order->order_date }}</h1>
@@ -66,21 +76,38 @@
         <div class="col-md-6">        
             <br><label for="name">Figures</label><br>
             @foreach($figures as $figure)
-              {!! Form::open(['url' => '/edit/order/figure']) !!}
-              {{$figure->figure->name}}<br>
-              {!! Form::number('price_yen',$figure->price_yen,['class'=>'','id'=>'url']) !!}
-              {!! Form::number('price_usd',$figure->price_usd,['class'=>'','id'=>'url','step'=>'0.01']) !!}              
-              {!! Form::text('status',$figure->status,['class'=>'','id'=>'url']) !!}
-              {!! Form::submit('Edit Figure') !!}    
-              {!! Form::hidden('order_figure_id',$figure->id) !!}    
-               {!! Form::hidden('order_id',$figure->order_id) !!}                                                                           
+              {!! Form::open(['url' => '/edit/user/figure']) !!}
+              <a href="/figure/{{$figure->userfigure->figureDB->url}}">{{$figure->userfigure->figureDB->name}}</a><br>
+              <div class="row">
+                <div class="col-md-2">
+                  {!! Form::number('price_yen',$figure->userfigure->price_yen,['class'=>'form-control input-sm','id'=>'price_yen']) !!}
+                </div>
+                <div class="col-md-2">
+                  {!! Form::number('price_usd',$figure->userfigure->price_usd,['class'=>'form-control input-sm','id'=>'price_usd','step'=>'0.01']) !!}              
+                </div>
+                <div class="col-md-4">
+                  {!! Form::text('condition',$figure->userfigure->condition,['class'=>'form-control input-sm','id'=>'condition']) !!}
+                </div>
+                <div class="col-md-4">
+                  {!! Form::date('order_date',$figure->userfigure->order_date,['class'=>'form-control input-sm','id'=>'order_date']) !!}
+                </div>     
+                <div class="col-md-3">                                           
+              {!! Form::submit('Edit Figure',['class'=>'btn btn-success']) !!}    
+                </div>
+              {!! Form::hidden('status',$figure->userfigure->status) !!}   
+              {!! Form::hidden('figure_id',$figure->userfigure->id) !!}
+              {!! Form::hidden('figuredb_id',$figure->userFigure->figureDB->id) !!}
+              {!! Form::hidden('order_id',$figure->order_id) !!}    
               {!! Form::close() !!}   
 
               {!! Form::open(['url' => '/remove/order/figure']) !!}
-              {!! Form::submit('X') !!}    
-              {!! Form::hidden('order_figure_id',$figure->id) !!}   
-              {!! Form::hidden('order_id',$figure->order_id) !!}                                                                     
-              {!! Form::close() !!}                 
+                <div class="col-md-1 figure-edit-inner">
+                  {!! Form::submit('X',['class'=>'btn btn-danger']) !!}    
+                </div>
+                {!! Form::hidden('order_figure_id',$figure->id) !!}   
+                {!! Form::hidden('order_id',$figure->order_id) !!}                                                                     
+              {!! Form::close() !!}    
+            </div> <!-- end row for figure options -->             
             @endforeach
 
             <br><label for="name">Goods</label><br>

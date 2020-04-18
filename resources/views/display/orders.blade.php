@@ -74,10 +74,10 @@ Orders - figurerant.com
                         <td>
                             @foreach($order->orderfigures as $figure)
                                 <?php 
-                                    $name = substr($figure->figure->name,0,35);
+                                    $name = substr($figure->userfigure->figureDB->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
+                                <a href="/figure/{{$figure->userfigure->figureDB->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
@@ -89,9 +89,9 @@ Orders - figurerant.com
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
-                                {{$figure->status}}
-                                @if($figure->status == 'Pre-order')
-                                    - {{$order->order_date}}<br>
+                                {{$figure->userfigure->condition}}
+                                @if($figure->userfigure->condition == 'Pre-order')
+                                    - {{$figure->userfigure->order_date}}<br>
                                 @else
                                     <br>
                                 @endif
@@ -107,8 +107,8 @@ Orders - figurerant.com
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_yen != '0')
-                                  {{$figure->price_yen}}
+                                @if($figure->userfigure->price_yen != '0')
+                                  {{$figure->userfigure->price_yen}}
                                 @endif
                                 <br>
                             @endforeach
@@ -121,8 +121,8 @@ Orders - figurerant.com
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_usd != '0')
-                                ${{$figure->price_usd}}
+                                @if($figure->userfigure->price_usd != '0')
+                                ${{$figure->userfigure->price_usd}}
                                 @endif
                                 <br>
                             @endforeach 
@@ -221,10 +221,10 @@ Orders - figurerant.com
                         <td>
                             @foreach($order->orderfigures as $figure)
                                 <?php 
-                                    $name = substr($figure->figure->name,0,35);
+                                    $name = substr($figure->userfigure->figureDB->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
+                                <a href="/figure/{{$figure->userfigure->figureDB->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
@@ -236,9 +236,9 @@ Orders - figurerant.com
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
-                                {{$figure->status}}
-                                @if($figure->status == 'Pre-order')
-                                    - {{$order->order_date}}<br>
+                                {{$figure->userfigure->condition}}
+                                @if($figure->userfigure->condition == 'Pre-order')
+                                    - {{$figure->userfigure->order_date}}<br>
                                 @else
                                     <br>
                                 @endif
@@ -254,8 +254,8 @@ Orders - figurerant.com
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_yen != '0')
-                                  {{$figure->price_yen}}
+                                @if($figure->userfigure->price_yen != '0')
+                                  {{$figure->userfigure->price_yen}}
                                 @endif
                                 <br>
                             @endforeach
@@ -268,8 +268,8 @@ Orders - figurerant.com
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_usd != '0')
-                                ${{$figure->price_usd}}
+                                @if($figure->userfigure->price_usd != '0')
+                                ${{$figure->userfigure->price_usd}}
                                 @endif
                                 <br>
                             @endforeach  
@@ -372,10 +372,10 @@ Orders - figurerant.com
                         <td>
                             @foreach($order->orderfigures as $figure)
                                 <?php 
-                                    $name = substr($figure->figure->name,0,35);
+                                    $name = substr($figure->userfigure->figureDB->name,0,35);
                                     //$name = $figure->name;
                                 ?>
-                                <a href="/figure/{{$figure->figure->url}}">{{$name}}</a><br>
+                                <a href="/figure/{{$figure->userfigure->figureDB->url}}">{{$name}}</a><br>
                             @endforeach
                             @foreach($order->ordergoods as $good)
                                 <?php 
@@ -387,9 +387,9 @@ Orders - figurerant.com
                         </td>
                         <td style="white-space: nowrap">
                             @foreach($order->orderfigures as $figure)
-                                {{$figure->status}}
-                                @if($figure->status == 'Pre-order')
-                                    - {{$order->order_date}}<br>
+                                {{$figure->userfigure->condition}}
+                                @if($figure->userfigure->condition == 'Pre-order')
+                                    - {{$figure->userfigure->order_date}}<br>
                                 @else
                                     <br>
                                 @endif
@@ -405,8 +405,8 @@ Orders - figurerant.com
                         </td>                        
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_yen != '0')
-                                  {{$figure->price_yen}}
+                                @if($figure->userfigure->price_yen != '0')
+                                  {{$figure->userfigure->price_yen}}
                                 @endif
                                 <br>
                             @endforeach
@@ -419,8 +419,8 @@ Orders - figurerant.com
                         </td>
                         <td>
                             @foreach($order->orderfigures as $figure)
-                                @if($figure->price_usd != '0')
-                                ${{$figure->price_usd}}
+                                @if($figure->userfigure->price_usd != '0')
+                                ${{$figure->userfigure->price_usd}}
                                 @endif
                                 <br>
                             @endforeach  
