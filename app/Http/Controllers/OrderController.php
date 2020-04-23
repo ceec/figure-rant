@@ -328,18 +328,25 @@ class OrderController extends Controller {
 
         foreach($orderfigures as $order) {
 
+            //dd($order);
+            
             // Update figure to have the data from orderfigures
             $figure = Figure::where('figure_id','=',$order->figuredb_id)->first();
-            $figure->price_yen = $order->price_yen;
-            $figure->price_usd = $order->price_usd;
-            $figure->condition = $order->status;
-            $figure->save();
 
-            // Add the figure->id to orderfigure in figure_id
-            $orderfigure = Orderfigure::find($order->id);
-            $orderfigure->figure_id = $figure->id;
-            $orderfigure->save();
+            if (isset($figure)) {
+                $figure->price_yen = $order->price_yen;
+                $figure->price_usd = $order->price_usd;
+                $figure->condition = $order->status;
+                $figure->save();
 
+                // Add the figure->id to orderfigure in figure_id
+                $orderfigure = Orderfigure::find($order->id);
+                $orderfigure->figure_id = $figure->id;
+                $orderfigure->save();
+
+                print 'Updating figure id: '.$figure->id.' and order id: '.$order->id;
+                print '<hr>';
+            }
             
         }
 
